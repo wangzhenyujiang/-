@@ -22,6 +22,8 @@
 		F08DCD681A2C20F2007DAED8 /* ShowFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD671A2C20F2007DAED8 /* ShowFoodViewController.m */; };
 		F08DCD6B1A2C2113007DAED8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD6A1A2C2113007DAED8 /* LoginViewController.m */; };
 		F08DCD6E1A2C213A007DAED8 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */; };
+		F08DCD711A2C2B84007DAED8 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = F08DCD701A2C2B84007DAED8 /* add.png */; };
+		F08DCD731A2C2B97007DAED8 /* pic_default.png in Resources */ = {isa = PBXBuildFile; fileRef = F08DCD721A2C2B97007DAED8 /* pic_default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		F08DCD6A1A2C2113007DAED8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F08DCD6C1A2C213A007DAED8 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		F08DCD701A2C2B84007DAED8 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		F08DCD721A2C2B97007DAED8 /* pic_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic_default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				F08DCD291A2C1D56007DAED8 /* AppDelegate.h */,
 				F08DCD2A1A2C1D56007DAED8 /* AppDelegate.m */,
 				F08DCD321A2C1D56007DAED8 /* Main.storyboard */,
+				F08DCD6F1A2C2B4F007DAED8 /* Image */,
 				F08DCD4E1A2C1E11007DAED8 /* MainController */,
 				F08DCD581A2C1F0F007DAED8 /* ConnectionViewCell */,
 				F08DCD351A2C1D56007DAED8 /* Images.xcassets */,
@@ -181,6 +186,15 @@
 				F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */,
 			);
 			name = PushController;
+			sourceTree = "<group>";
+		};
+		F08DCD6F1A2C2B4F007DAED8 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				F08DCD721A2C2B97007DAED8 /* pic_default.png */,
+				F08DCD701A2C2B84007DAED8 /* add.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +277,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08DCD731A2C2B97007DAED8 /* pic_default.png in Resources */,
 				F08DCD341A2C1D56007DAED8 /* Main.storyboard in Resources */,
 				F08DCD391A2C1D56007DAED8 /* LaunchScreen.xib in Resources */,
 				F08DCD361A2C1D56007DAED8 /* Images.xcassets in Resources */,
+				F08DCD711A2C2B84007DAED8 /* add.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
