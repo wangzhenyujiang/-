@@ -16,6 +16,8 @@
 		F08DCD511A2C1E2F007DAED8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD501A2C1E2F007DAED8 /* MainViewController.m */; };
 		F08DCD541A2C1E3E007DAED8 /* ShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD531A2C1E3E007DAED8 /* ShakeViewController.m */; };
 		F08DCD571A2C1E55007DAED8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD561A2C1E55007DAED8 /* ConfigViewController.m */; };
+		F08DCD5B1A2C1F70007DAED8 /* InfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD5A1A2C1F70007DAED8 /* InfoCollectionViewCell.m */; };
+		F08DCD5E1A2C1F88007DAED8 /* AddCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD5D1A2C1F88007DAED8 /* AddCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		F08DCD531A2C1E3E007DAED8 /* ShakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeViewController.m; sourceTree = "<group>"; };
 		F08DCD551A2C1E55007DAED8 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		F08DCD561A2C1E55007DAED8 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		F08DCD591A2C1F70007DAED8 /* InfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCollectionViewCell.h; sourceTree = "<group>"; };
+		F08DCD5A1A2C1F70007DAED8 /* InfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCollectionViewCell.m; sourceTree = "<group>"; };
+		F08DCD5C1A2C1F88007DAED8 /* AddCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCollectionViewCell.h; sourceTree = "<group>"; };
+		F08DCD5D1A2C1F88007DAED8 /* AddCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		F08DCD241A2C1D56007DAED8 /* 哎呀吃什么 */ = {
 			isa = PBXGroup;
 			children = (
+				F08DCD581A2C1F0F007DAED8 /* ConnectionViewCell */,
 				F08DCD4E1A2C1E11007DAED8 /* Controller */,
 				F08DCD291A2C1D56007DAED8 /* AppDelegate.h */,
 				F08DCD2A1A2C1D56007DAED8 /* AppDelegate.m */,
@@ -135,6 +142,17 @@
 				F08DCD561A2C1E55007DAED8 /* ConfigViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		F08DCD581A2C1F0F007DAED8 /* ConnectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F08DCD591A2C1F70007DAED8 /* InfoCollectionViewCell.h */,
+				F08DCD5A1A2C1F70007DAED8 /* InfoCollectionViewCell.m */,
+				F08DCD5C1A2C1F88007DAED8 /* AddCollectionViewCell.h */,
+				F08DCD5D1A2C1F88007DAED8 /* AddCollectionViewCell.m */,
+			);
+			name = ConnectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08DCD5B1A2C1F70007DAED8 /* InfoCollectionViewCell.m in Sources */,
 				F08DCD2B1A2C1D56007DAED8 /* AppDelegate.m in Sources */,
+				F08DCD5E1A2C1F88007DAED8 /* AddCollectionViewCell.m in Sources */,
 				F08DCD511A2C1E2F007DAED8 /* MainViewController.m in Sources */,
 				F08DCD571A2C1E55007DAED8 /* ConfigViewController.m in Sources */,
 				F08DCD281A2C1D56007DAED8 /* main.m in Sources */,
