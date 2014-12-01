@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  MainViewController.h
 //  哎呀吃什么
 //
 //  Created by 王振宇 on 14/12/1.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface MainViewController : UIViewController
 
 @end
-
