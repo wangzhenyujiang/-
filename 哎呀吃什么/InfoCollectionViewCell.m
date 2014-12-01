@@ -10,4 +10,7 @@
 
 @implementation InfoCollectionViewCell
 
+@synthesize infoFoodImageView=_infoFoodImageView;
+@synthesize infoFoodNameLabel=_infoFoodNameLabel;
+
 @end

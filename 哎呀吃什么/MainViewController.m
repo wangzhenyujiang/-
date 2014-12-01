@@ -14,6 +14,8 @@
 
 @implementation MainViewController
 
+@synthesize collectionView=_collectionView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

@@ -10,4 +10,7 @@
 
 @implementation AddCollectionViewCell
 
+@synthesize addFoodImageView=_addFoodImageView;
+@synthesize addFoodNameLabel=_addFoodNameLabel;
+
 @end

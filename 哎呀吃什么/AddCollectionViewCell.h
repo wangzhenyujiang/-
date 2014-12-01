@@ -10,4 +10,8 @@
 
 @interface AddCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *addFoodNameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *addFoodImageView;
+
 @end
