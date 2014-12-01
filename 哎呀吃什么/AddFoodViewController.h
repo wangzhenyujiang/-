@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddFoodViewController : UIViewController
+@interface AddFoodViewController : UIViewController<UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
+
+@property(nonatomic,strong)NSDictionary *oneFoodInfoDictionary;
+@property(nonatomic,copy)NSString *foodName;
+@property(nonatomic,strong)NSData *data;
+
 @property (weak, nonatomic) IBOutlet UITextField *addFoodNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *addFoodImageView;
 - (IBAction)addFoodButtonAction:(id)sender;
+
+- (IBAction)cancelButtonAction:(id)sender;
+
+- (IBAction)saveButtonAction:(id)sender;
+
 
 @end

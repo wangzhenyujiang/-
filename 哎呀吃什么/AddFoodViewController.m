@@ -9,6 +9,9 @@
 #import "AddFoodViewController.h"
 
 @interface AddFoodViewController ()
+{
+    UIActionSheet *MyActionsheet;
+}
 
 @end
 
@@ -16,6 +19,9 @@
 
 @synthesize addFoodNameLabel=_addFoodNameLabel;
 @synthesize addFoodImageView=_addFoodImageView;
+@synthesize oneFoodInfoDictionary=_oneFoodInfoDictionary;
+@synthesize foodName=_foodName;
+@synthesize data=_data;
 
 
 - (void)viewDidLoad {
@@ -39,5 +45,14 @@
 */
 
 - (IBAction)addFoodButtonAction:(id)sender {
+    
+}
+
+- (IBAction)cancelButtonAction:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)saveButtonAction:(id)sender {
 }
 @end

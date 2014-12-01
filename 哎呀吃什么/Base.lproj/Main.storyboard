@@ -110,7 +110,7 @@
                                         <connections>
                                             <outlet property="addFoodImageView" destination="fAy-1C-T35" id="2ts-ll-W10"/>
                                             <outlet property="addFoodNameLabel" destination="qa6-0A-K1S" id="D0f-tJ-qb1"/>
-                                            <segue destination="JlH-ol-2Qv" kind="push" id="ftK-fg-GNS"/>
+                                            <segue destination="A3B-Nd-YsF" kind="modal" id="baJ-Qo-Ldl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="1491" y="-320"/>
         </scene>
-        <!--Add Food View Controller-->
+        <!--菜肴-->
         <scene sceneID="vrM-at-oHb">
             <objects>
                 <viewController id="JlH-ol-2Qv" customClass="AddFoodViewController" sceneMemberID="viewController">
@@ -160,7 +160,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="153" width="240" height="30"/>
+                                    <rect key="frame" x="80" y="133" width="240" height="30"/>
                                 </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="1bX-2o-1mp">
@@ -198,7 +198,18 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="CFx-ta-7PR"/>
+                    <navigationItem key="navigationItem" title="菜肴" id="CFx-ta-7PR">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="nKX-9Z-LAh">
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="JlH-ol-2Qv" id="g5d-Lc-d5y"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="0Gd-jA-ofC">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="JlH-ol-2Qv" id="fyU-dK-Igc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addFoodImageView" destination="1bX-2o-1mp" id="jsy-LO-F0I"/>
                         <outlet property="addFoodNameLabel" destination="OaX-T2-8g6" id="T5u-b7-PjS"/>
@@ -206,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqe-Kd-EGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2253" y="-320"/>
+            <point key="canvasLocation" x="3171" y="-320"/>
         </scene>
         <!--Shake View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -303,6 +314,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zj-k9-CtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="1102"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XHd-lf-rOt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A3B-Nd-YsF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zdl-Tl-pEq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JlH-ol-2Qv" kind="relationship" relationship="rootViewController" id="4dS-9a-IHC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jP7-ya-mdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2253" y="-320"/>
         </scene>
     </scenes>
     <resources>
