@@ -18,6 +18,10 @@
 		F08DCD571A2C1E55007DAED8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD561A2C1E55007DAED8 /* ConfigViewController.m */; };
 		F08DCD5B1A2C1F70007DAED8 /* InfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD5A1A2C1F70007DAED8 /* InfoCollectionViewCell.m */; };
 		F08DCD5E1A2C1F88007DAED8 /* AddCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD5D1A2C1F88007DAED8 /* AddCollectionViewCell.m */; };
+		F08DCD621A2C20A9007DAED8 /* AddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD611A2C20A9007DAED8 /* AddFoodViewController.m */; };
+		F08DCD681A2C20F2007DAED8 /* ShowFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD671A2C20F2007DAED8 /* ShowFoodViewController.m */; };
+		F08DCD6B1A2C2113007DAED8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD6A1A2C2113007DAED8 /* LoginViewController.m */; };
+		F08DCD6E1A2C213A007DAED8 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,14 @@
 		F08DCD5A1A2C1F70007DAED8 /* InfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCollectionViewCell.m; sourceTree = "<group>"; };
 		F08DCD5C1A2C1F88007DAED8 /* AddCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCollectionViewCell.h; sourceTree = "<group>"; };
 		F08DCD5D1A2C1F88007DAED8 /* AddCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCollectionViewCell.m; sourceTree = "<group>"; };
+		F08DCD601A2C20A9007DAED8 /* AddFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodViewController.h; sourceTree = "<group>"; };
+		F08DCD611A2C20A9007DAED8 /* AddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodViewController.m; sourceTree = "<group>"; };
+		F08DCD661A2C20F2007DAED8 /* ShowFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowFoodViewController.h; sourceTree = "<group>"; };
+		F08DCD671A2C20F2007DAED8 /* ShowFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowFoodViewController.m; sourceTree = "<group>"; };
+		F08DCD691A2C2113007DAED8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F08DCD6A1A2C2113007DAED8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F08DCD6C1A2C213A007DAED8 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +105,11 @@
 		F08DCD241A2C1D56007DAED8 /* 哎呀吃什么 */ = {
 			isa = PBXGroup;
 			children = (
-				F08DCD581A2C1F0F007DAED8 /* ConnectionViewCell */,
-				F08DCD4E1A2C1E11007DAED8 /* Controller */,
 				F08DCD291A2C1D56007DAED8 /* AppDelegate.h */,
 				F08DCD2A1A2C1D56007DAED8 /* AppDelegate.m */,
 				F08DCD321A2C1D56007DAED8 /* Main.storyboard */,
+				F08DCD4E1A2C1E11007DAED8 /* MainController */,
+				F08DCD581A2C1F0F007DAED8 /* ConnectionViewCell */,
 				F08DCD351A2C1D56007DAED8 /* Images.xcassets */,
 				F08DCD371A2C1D56007DAED8 /* LaunchScreen.xib */,
 				F08DCD251A2C1D56007DAED8 /* Supporting Files */,
@@ -131,7 +143,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F08DCD4E1A2C1E11007DAED8 /* Controller */ = {
+		F08DCD4E1A2C1E11007DAED8 /* MainController */ = {
 			isa = PBXGroup;
 			children = (
 				F08DCD4F1A2C1E2F007DAED8 /* MainViewController.h */,
@@ -140,8 +152,9 @@
 				F08DCD531A2C1E3E007DAED8 /* ShakeViewController.m */,
 				F08DCD551A2C1E55007DAED8 /* ConfigViewController.h */,
 				F08DCD561A2C1E55007DAED8 /* ConfigViewController.m */,
+				F08DCD5F1A2C206B007DAED8 /* PushController */,
 			);
-			name = Controller;
+			name = MainController;
 			sourceTree = "<group>";
 		};
 		F08DCD581A2C1F0F007DAED8 /* ConnectionViewCell */ = {
@@ -153,6 +166,21 @@
 				F08DCD5D1A2C1F88007DAED8 /* AddCollectionViewCell.m */,
 			);
 			name = ConnectionViewCell;
+			sourceTree = "<group>";
+		};
+		F08DCD5F1A2C206B007DAED8 /* PushController */ = {
+			isa = PBXGroup;
+			children = (
+				F08DCD601A2C20A9007DAED8 /* AddFoodViewController.h */,
+				F08DCD611A2C20A9007DAED8 /* AddFoodViewController.m */,
+				F08DCD661A2C20F2007DAED8 /* ShowFoodViewController.h */,
+				F08DCD671A2C20F2007DAED8 /* ShowFoodViewController.m */,
+				F08DCD691A2C2113007DAED8 /* LoginViewController.h */,
+				F08DCD6A1A2C2113007DAED8 /* LoginViewController.m */,
+				F08DCD6C1A2C213A007DAED8 /* RegisterViewController.h */,
+				F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */,
+			);
+			name = PushController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,10 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08DCD6E1A2C213A007DAED8 /* RegisterViewController.m in Sources */,
 				F08DCD5B1A2C1F70007DAED8 /* InfoCollectionViewCell.m in Sources */,
 				F08DCD2B1A2C1D56007DAED8 /* AppDelegate.m in Sources */,
+				F08DCD621A2C20A9007DAED8 /* AddFoodViewController.m in Sources */,
 				F08DCD5E1A2C1F88007DAED8 /* AddCollectionViewCell.m in Sources */,
+				F08DCD6B1A2C2113007DAED8 /* LoginViewController.m in Sources */,
 				F08DCD511A2C1E2F007DAED8 /* MainViewController.m in Sources */,
+				F08DCD681A2C20F2007DAED8 /* ShowFoodViewController.m in Sources */,
 				F08DCD571A2C1E55007DAED8 /* ConfigViewController.m in Sources */,
 				F08DCD281A2C1D56007DAED8 /* main.m in Sources */,
 				F08DCD541A2C1E3E007DAED8 /* ShakeViewController.m in Sources */,
