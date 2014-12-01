@@ -177,6 +177,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="80" y="240" width="240" height="240"/>
                                 </variation>
+                                <connections>
+                                    <action selector="addFoodButtonAction:" destination="JlH-ol-2Qv" eventType="touchUpInside" id="uuZ-Ex-OiQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,6 +199,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="CFx-ta-7PR"/>
+                    <connections>
+                        <outlet property="addFoodImageView" destination="1bX-2o-1mp" id="jsy-LO-F0I"/>
+                        <outlet property="addFoodNameLabel" destination="OaX-T2-8g6" id="T5u-b7-PjS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqe-Kd-EGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

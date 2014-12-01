@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AddFoodViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *addFoodNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *addFoodImageView;
+- (IBAction)addFoodButtonAction:(id)sender;
 
 @end
