@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "InfoCollectionViewCell.h"
+#import "AddCollectionViewCell.h"
 
 @interface MainViewController ()
 
@@ -35,5 +37,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+
+    return 1;
+}
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    AddCollectionViewCell *addFoodCell=[self.collectionView dequeueReusableCellWithReuseIdentifier:@"addFoodCell" forIndexPath:indexPath];
+    
+    return addFoodCell;
+    
+}
+
 
 @end

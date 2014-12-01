@@ -116,6 +116,10 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="64" width="400" height="600"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="ce5-IA-Ouf"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="yZs-e8-Q1F"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
