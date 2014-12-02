@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F06ED1921A2D5531004D2ED1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06ED1911A2D5531004D2ED1 /* LoginViewController.m */; };
 		F06ED1981A2D59A6004D2ED1 /* configTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F06ED1971A2D59A6004D2ED1 /* configTableViewController.m */; };
+		F06ED19F1A2D85B5004D2ED1 /* UMFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F06ED19A1A2D85B5004D2ED1 /* UMFeedbackLocalizable.strings */; };
+		F06ED1A01A2D85B5004D2ED1 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F06ED19C1A2D85B5004D2ED1 /* libUMFeedback.a */; };
 		F08DCD281A2C1D56007DAED8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD271A2C1D56007DAED8 /* main.m */; };
 		F08DCD2B1A2C1D56007DAED8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD2A1A2C1D56007DAED8 /* AppDelegate.m */; };
 		F08DCD341A2C1D56007DAED8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08DCD321A2C1D56007DAED8 /* Main.storyboard */; };
@@ -41,6 +43,10 @@
 		F06ED1911A2D5531004D2ED1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F06ED1961A2D59A6004D2ED1 /* configTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configTableViewController.h; sourceTree = "<group>"; };
 		F06ED1971A2D59A6004D2ED1 /* configTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configTableViewController.m; sourceTree = "<group>"; };
+		F06ED19B1A2D85B5004D2ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/UMFeedbackLocalizable.strings; sourceTree = "<group>"; };
+		F06ED19C1A2D85B5004D2ED1 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
+		F06ED19D1A2D85B5004D2ED1 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
+		F06ED19E1A2D85B5004D2ED1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMFeedbackLocalizable.strings"; sourceTree = "<group>"; };
 		F08DCD221A2C1D56007DAED8 /* 哎呀吃什么.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "哎呀吃什么.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08DCD261A2C1D56007DAED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F08DCD271A2C1D56007DAED8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06ED1A01A2D85B5004D2ED1 /* libUMFeedback.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,15 +102,24 @@
 				F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */,
 				F06ED1901A2D5531004D2ED1 /* LoginViewController.h */,
 				F06ED1911A2D5531004D2ED1 /* LoginViewController.m */,
-				F06ED1961A2D59A6004D2ED1 /* configTableViewController.h */,
-				F06ED1971A2D59A6004D2ED1 /* configTableViewController.m */,
 			);
 			name = LoginController;
+			sourceTree = "<group>";
+		};
+		F06ED1991A2D85B5004D2ED1 /* UMengFeedback_SDK_2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				F06ED19A1A2D85B5004D2ED1 /* UMFeedbackLocalizable.strings */,
+				F06ED19C1A2D85B5004D2ED1 /* libUMFeedback.a */,
+				F06ED19D1A2D85B5004D2ED1 /* UMFeedback.h */,
+			);
+			path = UMengFeedback_SDK_2.0;
 			sourceTree = "<group>";
 		};
 		F08DCD191A2C1D56007DAED8 = {
 			isa = PBXGroup;
 			children = (
+				F06ED1991A2D85B5004D2ED1 /* UMengFeedback_SDK_2.0 */,
 				F08DCD241A2C1D56007DAED8 /* 哎呀吃什么 */,
 				F08DCD411A2C1D56007DAED8 /* 哎呀吃什么Tests */,
 				F08DCD231A2C1D56007DAED8 /* Products */,
@@ -168,6 +184,8 @@
 				F08DCD501A2C1E2F007DAED8 /* MainViewController.m */,
 				F08DCD521A2C1E3E007DAED8 /* ShakeViewController.h */,
 				F08DCD531A2C1E3E007DAED8 /* ShakeViewController.m */,
+				F06ED1961A2D59A6004D2ED1 /* configTableViewController.h */,
+				F06ED1971A2D59A6004D2ED1 /* configTableViewController.m */,
 				F06ED1891A2D5380004D2ED1 /* LoginController */,
 				F08DCD5F1A2C206B007DAED8 /* PushController */,
 			);
@@ -268,6 +286,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = F08DCD191A2C1D56007DAED8;
 			productRefGroup = F08DCD231A2C1D56007DAED8 /* Products */;
@@ -287,6 +306,7 @@
 			files = (
 				F08DCD731A2C2B97007DAED8 /* pic_default.png in Resources */,
 				F08DCD341A2C1D56007DAED8 /* Main.storyboard in Resources */,
+				F06ED19F1A2D85B5004D2ED1 /* UMFeedbackLocalizable.strings in Resources */,
 				F08DCD391A2C1D56007DAED8 /* LaunchScreen.xib in Resources */,
 				F08DCD361A2C1D56007DAED8 /* Images.xcassets in Resources */,
 				F08DCD711A2C2B84007DAED8 /* add.png in Resources */,
@@ -340,6 +360,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F06ED19A1A2D85B5004D2ED1 /* UMFeedbackLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F06ED19B1A2D85B5004D2ED1 /* Base */,
+				F06ED19E1A2D85B5004D2ED1 /* zh-Hans */,
+			);
+			name = UMFeedbackLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		F08DCD321A2C1D56007DAED8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,6 +470,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "哎呀吃什么/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UMengFeedback_SDK_2.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -451,6 +484,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "哎呀吃什么/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UMengFeedback_SDK_2.0",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

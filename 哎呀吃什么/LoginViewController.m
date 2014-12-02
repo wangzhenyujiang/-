@@ -14,6 +14,11 @@
 
 @implementation LoginViewController
 
+@synthesize  userNameField=_userNameField;
+@synthesize  userPasField=_userPasField;
+@synthesize  m_data=_m_data;
+
+
 
 
 - (void)viewDidLoad {
@@ -37,5 +42,98 @@
 */
 
 - (IBAction)loginButtonAction:(id)sender {
+     NSLog(@"button执行");
+    
+    if([_userNameField.text length]!=0 && [_userPasField.text length]!=0)
+    {
+        NSString * s_url = [[NSString alloc]initWithFormat:@"http://cqcreer.jd-app.com/login.php?username=%@&password=%@",_userNameField.text,_userPasField.text];
+        NSURL *url = [[NSURL alloc]initWithString:s_url];
+        //创建请求对象
+       
+        NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
+        
+        
+      //  [[NSURLConnection alloc]initWithRequest:request delegate:self];
+        
+        NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
+        
+        if (connection) {
+             _m_data = [[NSMutableData alloc]init];
+            NSLog(@"connection创建成功过");
+        }else
+        {
+        
+            NSLog(@"connection创建失败");
+        }
+        
+        NSLog(@"执行");
+
+    }else
+    {
+        
+        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
+                                                      message:@"用户名或者密码不能为空" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        [alert show];
+        
+    }
+    
+   
 }
+
+- (IBAction)loginBackBarButtonAction:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+#pragma NSURLConnectionDelegate
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.m_data appendData:data];
+    NSLog(@"didReceiveData");
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"connectionDidFinishLoading");
+    
+    NSString *s_result = [[NSString alloc]initWithData:_m_data encoding:NSUTF8StringEncoding];
+    //处理接收到的数据
+    //如果包含“ok”，则登录成功，反之则失败
+    
+    if([s_result length]==0)
+    {
+        NSLog(@"没有数据");
+    }else
+    {
+        NSLog(s_result);
+    }
+    
+    if ([s_result rangeOfString:@"OK"].length>0)
+    {
+        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
+                                                      message:@"登录成功" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        [alert show];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:@"登录失败" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        [alert show];
+        NSLog(@"login faile");
+    }
+
+}
+
+
+-(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:@"请检查网络连接" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles: nil];
+    [alert show];
+    NSLog(@"数据接受失败，失败原因：%@",[error localizedDescription]);
+}
+
+
+
 @end

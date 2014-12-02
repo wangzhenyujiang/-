@@ -19,4 +19,11 @@
 
 
 - (IBAction)cancelButtonAction:(id)sender;
+
+@property(nonatomic,copy)NSString *userName;
+@property(nonatomic,copy)NSString *userPas;
+@property(nonatomic,copy)NSString *rePas;
+
+@property(nonatomic,strong)NSMutableData *data;
+
 @end

@@ -18,6 +18,7 @@
 
 @synthesize collectionView=_collectionView;
 - (void)viewDidLoad {
+   // self.dataSource = self;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

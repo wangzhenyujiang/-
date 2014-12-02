@@ -10,4 +10,6 @@
 
 @interface configTableViewController : UITableViewController
 
+- (IBAction)userSayBackAction:(id)sender;
+
 @end

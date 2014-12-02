@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<NSURLConnectionDataDelegate,NSURLConnectionDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 
-
 @property (weak, nonatomic) IBOutlet UITextField *userPasField;
+
+@property(nonatomic,strong) NSMutableData *m_data;
 - (IBAction)loginButtonAction:(id)sender;
+- (IBAction)loginBackBarButtonAction:(id)sender;
+
+
 
 @end
