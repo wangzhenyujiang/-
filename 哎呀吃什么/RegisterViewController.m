@@ -14,6 +14,10 @@
 
 @implementation RegisterViewController
 
+@synthesize userNameField=_userNameField;
+@synthesize userPasfield=_userPasfield;
+@synthesize rePasField=_rePasField;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -34,4 +38,11 @@
 }
 */
 
+- (IBAction)rigisterButtonAction:(id)sender {
+    
+}
+
+- (IBAction)cancelButtonAction:(id)sender {
+    
+}
 @end

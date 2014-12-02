@@ -17,7 +17,6 @@
 @implementation MainViewController
 
 @synthesize collectionView=_collectionView;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,13 +40,16 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
 
-    return 1;
+    return 4;
 }
+
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     AddCollectionViewCell *addFoodCell=[self.collectionView dequeueReusableCellWithReuseIdentifier:@"addFoodCell" forIndexPath:indexPath];
+    
+    InfoCollectionViewCell *infoCell=[self.collectionView dequeueReusableCellWithReuseIdentifier:@"foodInfoCell" forIndexPath:indexPath];
     
     return addFoodCell;
     

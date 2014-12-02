@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 
 @end

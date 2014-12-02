@@ -10,8 +10,9 @@
 
 @interface InfoCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *infoFoodNameLabel;
+//@property (weak, nonatomic) IBOutlet UIImageView *infoFoodImageView;
+//@property (weak, nonatomic) IBOutlet UILabel *infoFoodNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *infoFoodImageView;
-
+@property (weak, nonatomic) IBOutlet UILabel *infoFoodNameLabel;
 
 @end

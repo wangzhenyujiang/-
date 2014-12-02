@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController<NSURLConnectionDataDelegate,NSURLConnectionDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *userNameField;
+
+@property (weak, nonatomic) IBOutlet UITextField *userPasfield;
+@property (weak, nonatomic) IBOutlet UITextField *rePasField;
+
+- (IBAction)rigisterButtonAction:(id)sender;
+
+
+- (IBAction)cancelButtonAction:(id)sender;
 @end

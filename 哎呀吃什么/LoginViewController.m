@@ -2,7 +2,7 @@
 //  LoginViewController.m
 //  哎呀吃什么
 //
-//  Created by 王振宇 on 14/12/1.
+//  Created by 王振宇 on 14/12/2.
 //  Copyright (c) 2014年 王振宇. All rights reserved.
 //
 
@@ -13,6 +13,8 @@
 @end
 
 @implementation LoginViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,4 +36,6 @@
 }
 */
 
+- (IBAction)loginButtonAction:(id)sender {
+}
 @end
