@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--菜单-->
@@ -194,13 +195,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vKl-QG-asn" id="aRE-fr-zKN">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="游客" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H58-nh-GXJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="游客" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H58-nh-GXJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="H58-nh-GXJ" secondAttribute="centerX" id="Nqc-Wn-Vvt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -314,13 +318,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CM0-3d-wFH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CM0-3d-wFH">
                                 <rect key="frame" x="70" y="134" width="181" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0G-F6-shH">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0G-F6-shH">
                                 <rect key="frame" x="48" y="285" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="c4C-L7-iji"/>
+                                </constraints>
                                 <state key="normal" title="登录">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -328,8 +335,11 @@
                                     <action selector="loginButtonAction:" destination="Zh8-oq-M0b" eventType="touchUpInside" id="5qH-BO-yw4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXs-e0-3ls">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXs-e0-3ls">
                                 <rect key="frame" x="227" y="285" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BRz-Tz-RGc"/>
+                                </constraints>
                                 <state key="normal" title="注册">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -337,7 +347,7 @@
                                     <segue destination="o0f-IK-i0h" kind="modal" id="KRZ-eP-Sah"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1T-mU-f19">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1T-mU-f19">
                                 <rect key="frame" x="0.0" y="13" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="登录" id="Pdw-ex-yuH">
@@ -349,13 +359,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5GE-7w-ZTv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5GE-7w-ZTv">
                                 <rect key="frame" x="70" y="206" width="181" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q0G-F6-shH" firstAttribute="leading" secondItem="tdj-tQ-kuZ" secondAttribute="leadingMargin" constant="32" id="23d-q4-nUS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IXs-e0-3ls" secondAttribute="trailing" constant="27" id="7q2-O4-3C3"/>
+                            <constraint firstItem="CM0-3d-wFH" firstAttribute="trailing" secondItem="5GE-7w-ZTv" secondAttribute="trailing" id="AYs-S7-lvk"/>
+                            <constraint firstItem="CM0-3d-wFH" firstAttribute="top" secondItem="C1T-mU-f19" secondAttribute="bottom" constant="77" id="DhS-W7-Ya9"/>
+                            <constraint firstItem="C1T-mU-f19" firstAttribute="centerX" secondItem="CM0-3d-wFH" secondAttribute="centerX" id="Dyz-3B-ZWz"/>
+                            <constraint firstItem="C1T-mU-f19" firstAttribute="leading" secondItem="tdj-tQ-kuZ" secondAttribute="leading" id="Fic-fX-LV6"/>
+                            <constraint firstItem="q0G-F6-shH" firstAttribute="baseline" secondItem="IXs-e0-3ls" secondAttribute="baseline" id="N8f-Am-Oz6"/>
+                            <constraint firstItem="q0G-F6-shH" firstAttribute="top" secondItem="5GE-7w-ZTv" secondAttribute="bottom" constant="49" id="SNs-KI-S44"/>
+                            <constraint firstAttribute="trailing" secondItem="C1T-mU-f19" secondAttribute="trailing" id="UgD-ke-ClJ"/>
+                            <constraint firstItem="5GE-7w-ZTv" firstAttribute="top" secondItem="CM0-3d-wFH" secondAttribute="bottom" constant="42" id="YcA-2Q-q9r"/>
+                            <constraint firstItem="CM0-3d-wFH" firstAttribute="leading" secondItem="tdj-tQ-kuZ" secondAttribute="leadingMargin" constant="54" id="iWN-OB-nNp"/>
+                            <constraint firstItem="5GE-7w-ZTv" firstAttribute="leading" secondItem="CM0-3d-wFH" secondAttribute="leading" id="qsd-qA-DLe"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="登录" id="ykp-xe-oIy"/>
