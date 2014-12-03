@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UIViewController<NSURLConnectionDataDelegate,NSURLConnectionDelegate>
+@interface RegisterViewController : UIViewController<NSURLConnectionDataDelegate,NSURLConnectionDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 
@@ -16,9 +16,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *rePasField;
 
 - (IBAction)rigisterButtonAction:(id)sender;
+- (IBAction)reallyHiddenKey:(id)sender;
 
 
 - (IBAction)cancelButtonAction:(id)sender;
+- (IBAction)hiddenKeyBoard:(id)sender;
 
 @property(nonatomic,copy)NSString *userName;
 @property(nonatomic,copy)NSString *userPas;

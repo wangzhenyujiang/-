@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController<NSURLConnectionDataDelegate,NSURLConnectionDelegate>
+@interface LoginViewController : UIViewController<NSURLConnectionDataDelegate,NSURLConnectionDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 
@@ -19,5 +19,6 @@
 - (IBAction)loginBackBarButtonAction:(id)sender;
 
 
+- (IBAction)hiddenKeyBoard:(id)sender;
 
 @end

@@ -314,9 +314,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qcB-df-sZN" id="iug-cV-TcT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11.png" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-af-vKU">
-                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
-                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SP-vy-wff">
                                                     <rect key="frame" x="56" y="6" width="231" height="36"/>
                                                     <state key="normal" title="用户中心">
@@ -326,6 +323,9 @@
                                                         <segue destination="Zh8-oq-M0b" kind="modal" id="lY6-7I-etV"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11.png" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-af-vKU">
+                                                    <rect key="frame" x="16" y="14" width="20" height="20"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -341,7 +341,7 @@
                                                     </state>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="13.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Wf-Bt-Z9o">
-                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="16" y="14" width="20" height="20"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -361,7 +361,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLw-Lc-rvL">
-                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="16" y="14" width="20" height="20"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -381,7 +381,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2.png" translatesAutoresizingMaskIntoConstraints="NO" id="kk9-0N-kKt">
-                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="16" y="14" width="20" height="20"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -401,7 +401,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="iC1-OZ-3r7">
-                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="17" y="12" width="20" height="20"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -484,11 +484,11 @@
                         <viewControllerLayoutGuide type="top" id="YcP-YJ-VUl"/>
                         <viewControllerLayoutGuide type="bottom" id="9vQ-72-3Hn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tdj-tQ-kuZ">
+                    <view key="view" contentMode="scaleToFill" id="tdj-tQ-kuZ" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CM0-3d-wFH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="CM0-3d-wFH">
                                 <rect key="frame" x="70" y="126" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -502,7 +502,7 @@
                                     <segue destination="o0f-IK-i0h" kind="modal" id="KRZ-eP-Sah"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5GE-7w-ZTv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5GE-7w-ZTv">
                                 <rect key="frame" x="70" y="164" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -537,6 +537,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="hiddenKeyBoard:" destination="Zh8-oq-M0b" eventType="touchUpInside" id="o08-fd-L3u"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="登录" id="ykp-xe-oIy"/>
@@ -548,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbk-uG-dMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="1072"/>
+            <point key="canvasLocation" x="1227" y="1067"/>
         </scene>
         <!--关于我们-->
         <scene sceneID="JRY-wz-yOj">
@@ -593,16 +596,16 @@
                         <viewControllerLayoutGuide type="top" id="iXl-cO-ezg"/>
                         <viewControllerLayoutGuide type="bottom" id="3WH-oY-f58"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="v8K-dF-vcf">
+                    <view key="view" contentMode="scaleToFill" id="v8K-dF-vcf" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-N6-3Rl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-N6-3Rl">
                                 <rect key="frame" x="70" y="106" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdu-iw-foi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="cdu-iw-foi">
                                 <rect key="frame" x="70" y="153" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -642,13 +645,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="psw.png" translatesAutoresizingMaskIntoConstraints="NO" id="63a-N3-wJo">
                                 <rect key="frame" x="32" y="197" width="30" height="30"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="重复密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-ob-pwc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="重复密码" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="w2o-ob-pwc">
                                 <rect key="frame" x="70" y="197" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="hiddenKeyBoard:" destination="o0f-IK-i0h" eventType="valueChanged" id="St8-6v-4Lu"/>
+                            <action selector="reallyHiddenKey:" destination="o0f-IK-i0h" eventType="touchUpInside" id="gJ8-wQ-szX"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="WYO-0g-MGQ"/>
                     <connections>

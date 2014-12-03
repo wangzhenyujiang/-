@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _userNameField.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +48,7 @@
     
     if([_userNameField.text length]!=0 && [_userPasField.text length]!=0)
     {
-        NSString * s_url = [[NSString alloc]initWithFormat:@"http://cqcreer.jd-app.com/login.php?username=%@&password=%@",_userNameField.text,_userPasField.text];
+        NSString * s_url = [[NSString alloc]initWithFormat:@"http://1.ingeatwhat.sinaapp.com/login.php?username=%@&password=%@",_userNameField.text,_userPasField.text];
         NSURL *url = [[NSURL alloc]initWithString:s_url];
         //创建请求对象
        
@@ -89,6 +90,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)hiddenKeyBoard:(id)sender {
+    
+    [_userNameField resignFirstResponder];
+    [_userPasField resignFirstResponder];
+}
+
 
 
 #pragma NSURLConnectionDelegate
@@ -102,10 +109,8 @@
     NSLog(@"connectionDidFinishLoading");
     
     NSString *s_result = [[NSString alloc]initWithData:_m_data encoding:NSUTF8StringEncoding];
-    //处理接收到的数据
-    //如果包含“ok”，则登录成功，反之则失败
     
-    if([s_result length]==0)
+        if([s_result length]==0)
     {
         NSLog(@"没有数据");
     }else
@@ -115,20 +120,16 @@
     
     if ([s_result rangeOfString:@"OK"].length>0)
     {
-//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-//                                                      message:@"ç" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//        [alert show];
+
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆成功" leftButtonTitle:nil rightButtonTitle:@"朕很开心"];
         
         [alert show];
 
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+       // [self dismissViewControllerAnimated:YES completion:nil];
     }
     else
     {
-//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:@"登录失败" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//        [alert show];
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆失败" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
         
         [alert show];
@@ -146,6 +147,18 @@
     NSLog(@"数据接受失败，失败原因：%@",[error localizedDescription]);
 }
 
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (range.location>=10)
+    {
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"没有这么长的昵称哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        [alert show];
+        return  NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
 @end

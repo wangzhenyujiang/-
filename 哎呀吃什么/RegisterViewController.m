@@ -27,13 +27,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _userNameField.delegate=self;
+    _userPasfield.delegate=self;
+    _rePasField.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated
+{
 
+    [super viewWillAppear:animated];
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -53,7 +61,8 @@
     {
         if ([self.userPas compare:self.rePas] == NSOrderedSame)
         {
-            NSString * s_url = [[NSString alloc]initWithFormat:@"http://cqcreer.jd-app.com/register.php?username=%@&password=%@",self.userName,self.userPas];
+            //http://1.ingeatwhat.sinaapp.com/register.php?username=21&password=21&password2=21&submit=Register
+            NSString * s_url = [[NSString alloc]initWithFormat:@"http://1.ingeatwhat.sinaapp.com/register.php?username=%@&password=%@&password2=%@",self.userName,self.userPas,self.userPas];
             NSURL *url = [[NSURL alloc]initWithString:s_url];
             //创建请求对象
             
@@ -98,9 +107,24 @@
     
 }
 
+- (IBAction)reallyHiddenKey:(id)sender {
+    
+    [_userNameField resignFirstResponder];
+    [_userPasfield resignFirstResponder];
+    [_rePasField resignFirstResponder];
+}
+
 - (IBAction)cancelButtonAction:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil ];
+    
+}
+
+- (IBAction)hiddenKeyBoard:(id)sender {
+    
+    [_userNameField resignFirstResponder];
+    [_userPasfield resignFirstResponder];
+    [_rePasField resignFirstResponder];
     
 }
 #pragma NSURLConnectionDelegate
@@ -127,15 +151,24 @@
     
     if ([s_result rangeOfString:@"OK"].length>0)
     {
-//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-//                                                      message:@"注册成功" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//        [alert show];
+
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"注册成功" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        
+       
+        alert.rightBlock = ^() {
+            NSLog(@"right button clicked");
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+        alert.dismissBlock = ^() {
+            NSLog(@"Do something interesting after dismiss block");
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+
         
         [alert show];
 
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+       // [self dismissViewControllerAnimated:YES completion:nil];
     }
     else
     {
@@ -156,6 +189,19 @@
     NSLog(@"数据接受失败，失败原因：%@",[error localizedDescription]);
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (range.location>=10)
+    {
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"名字密码太长不好记哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        [alert show];
+        return  NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
 
 
