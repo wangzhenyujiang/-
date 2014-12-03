@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *shakeFoodImageView;
 
 @property(strong,nonatomic)NSMutableArray *shakeFoodInfoList;
+
+@property(strong,nonatomic)NSTimer *timer;
 @end

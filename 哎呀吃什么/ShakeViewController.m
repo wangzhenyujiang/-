@@ -21,6 +21,7 @@
 @synthesize shakeFoodImageView=_shakeFoodImageView;
 @synthesize shakeFoodNameLabel=_shakeFoodNameLabel;
 @synthesize shakeFoodInfoList=_shakeFoodInfoList;
+@synthesize timer=_timer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,7 +69,6 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (!firstShake) {
-        
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"摇一摇" contentText:@"别摇了今天就吃它吧 >_<" leftButtonTitle:nil rightButtonTitle:@"就吃它了"];
         
         [alert show];
@@ -102,9 +102,15 @@
             self.shakeFoodImageView.image = [[UIImage alloc]initWithData:data];
             
             firstShake=NO;
+            _timer = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(TimerCallBack) userInfo:nil repeats:NO];
         }
 
         }
     }
+
+-(void)TimerCallBack
+{
+    firstShake=YES;
+}
 
 @end
