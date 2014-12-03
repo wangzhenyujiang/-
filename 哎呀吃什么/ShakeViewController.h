@@ -14,5 +14,6 @@
 
 @property(strong,nonatomic)NSMutableArray *shakeFoodInfoList;
 
+@property (weak, nonatomic) IBOutlet UIImageView *shakeControllerBackGroundImage;
 @property(strong,nonatomic)NSTimer *timer;
 @end

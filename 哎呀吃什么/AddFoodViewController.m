@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _addFoodNameLabel.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,20 +62,16 @@
 - (IBAction)saveButtonAction:(id)sender {
     
     self.foodName=[[NSString alloc]initWithString:self.addFoodNameLabel.text];
+    NSString *temp = [self.addFoodNameLabel.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];//判断用户输入是否全是空格的临时字符串
     
-    if ([self.foodName length]==0) {
+    if ([self.foodName length]==0 || [temp length]==0) {
         
 //        UIAlertView *alterView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"美食名不能为空" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles:nil, nil];
 //        
 //        [alterView show];
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名不能为空奥 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
         [alert show];
-        alert.rightBlock = ^() {
-            NSLog(@"right button clicked");
-        };
-        alert.dismissBlock = ^() {
-            NSLog(@"Do something interesting after dismiss block");
-        };
+        
 
         
     }else
@@ -188,6 +185,19 @@
     [picker dismissViewControllerAnimated:YES  completion:nil];
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (range.location>=8)
+    {
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名字八个字以内哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        [alert show];
+        return  NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
 
 @end

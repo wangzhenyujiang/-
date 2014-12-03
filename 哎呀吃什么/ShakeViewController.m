@@ -21,6 +21,7 @@
 @synthesize shakeFoodImageView=_shakeFoodImageView;
 @synthesize shakeFoodNameLabel=_shakeFoodNameLabel;
 @synthesize shakeFoodInfoList=_shakeFoodInfoList;
+@synthesize shakeControllerBackGroundImage=_shakeControllerBackGroundImage;
 @synthesize timer=_timer;
 
 - (void)viewDidLoad {
@@ -38,8 +39,10 @@
 {
     [super viewWillAppear:animated];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"shake" ofType:@"png"];
-    _shakeFoodImageView.image=[[UIImage alloc]initWithContentsOfFile:filePath];
+    self.shakeControllerBackGroundImage.hidden=NO;
+   // NSString *filePath = [[NSBundle mainBundle] pathForResource:@"shake" ofType:@"png"];
+    _shakeFoodImageView.image=[[UIImage alloc]init];
+
     
     _shakeFoodNameLabel.text=@"";
     
@@ -98,6 +101,8 @@
             self.shakeFoodImageView.clipsToBounds=YES;
             //保证图片比例不变
             self.shakeFoodImageView.contentMode=UIViewContentModeScaleAspectFill;
+            
+            self.shakeControllerBackGroundImage.hidden=YES;
             
             self.shakeFoodImageView.image = [[UIImage alloc]initWithData:data];
             

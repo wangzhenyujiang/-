@@ -7,6 +7,7 @@
 //
 
 #import "ShowFoodViewController.h"
+#import "DXAlertView.h"
 
 @interface ShowFoodViewController ()
 {
@@ -27,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _showFoodNameLabel.delegate=self;
+    
     NSString *name=[[_showFoodInfoList objectAtIndex:_foodIndex] objectForKey:@"foodName"];
     NSData *data=[[_showFoodInfoList objectAtIndex:_foodIndex] objectForKey:@"imageData"];
     _showData=data;
@@ -198,6 +201,20 @@
     
     return [paths stringByAppendingPathComponent:@"food.plist"];
     
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (range.location>=8)
+    {
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名字八个字以内哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        [alert show];
+        return  NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 
