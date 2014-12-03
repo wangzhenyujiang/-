@@ -72,7 +72,7 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (!firstShake) {
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"摇一摇" contentText:@"别摇了今天就吃它吧 >_<" leftButtonTitle:nil rightButtonTitle:@"就吃它了"];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"摇一摇" contentText:@"别摇了这顿就吃它吧 >_<" leftButtonTitle:@"一分钟后再战" rightButtonTitle:@"这顿就吃它了"];
         
         [alert show];
         

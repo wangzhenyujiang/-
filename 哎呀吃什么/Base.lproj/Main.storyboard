@@ -314,8 +314,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qcB-df-sZN" id="iug-cV-TcT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11.png" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-af-vKU">
+                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SP-vy-wff">
-                                                    <rect key="frame" x="56" y="8" width="231" height="31"/>
+                                                    <rect key="frame" x="56" y="6" width="231" height="36"/>
                                                     <state key="normal" title="用户中心">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -323,9 +326,6 @@
                                                         <segue destination="Zh8-oq-M0b" kind="modal" id="lY6-7I-etV"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11.png" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-af-vKU">
-                                                    <rect key="frame" x="8" y="7" width="30" height="30"/>
-                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -361,7 +361,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLw-Lc-rvL">
-                                                    <rect key="frame" x="8" y="5" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -401,7 +401,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="iC1-OZ-3r7">
-                                                    <rect key="frame" x="8" y="7" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -418,7 +418,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rg2-q1-5NN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="1072"/>
+            <point key="canvasLocation" x="825" y="1067"/>
         </scene>
         <!--版本说明-->
         <scene sceneID="DJl-ua-m8E">
