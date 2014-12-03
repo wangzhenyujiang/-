@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqe-Kd-EGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="-961"/>
+            <point key="canvasLocation" x="1646" y="-299"/>
         </scene>
         <!--摇一摇-->
         <scene sceneID="wg7-f3-ORb">
@@ -236,21 +236,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-NB-U7N">
-                                <rect key="frame" x="40" y="96" width="240" height="30"/>
+                                <rect key="frame" x="38" y="83" width="240" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shake.png" translatesAutoresizingMaskIntoConstraints="NO" id="aDQ-iq-8Bo">
-                                <rect key="frame" x="40" y="150" width="237" height="235"/>
+                                <rect key="frame" x="40" y="127" width="237" height="235"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3LF-NB-U7N" firstAttribute="width" secondItem="aDQ-iq-8Bo" secondAttribute="width" id="PJM-B0-b1M"/>
                             <constraint firstItem="3LF-NB-U7N" firstAttribute="centerX" secondItem="aDQ-iq-8Bo" secondAttribute="centerX" id="dBb-gt-HrL"/>
-                            <constraint firstAttribute="centerY" secondItem="aDQ-iq-8Bo" secondAttribute="centerY" id="eVN-T8-yrv"/>
                             <constraint firstAttribute="centerX" secondItem="aDQ-iq-8Bo" secondAttribute="centerX" id="ech-sD-tvM"/>
+                            <constraint firstItem="aDQ-iq-8Bo" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" constant="127" id="hKz-Sc-jBs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="摇一摇" id="ATA-rY-Nab"/>
@@ -312,16 +312,32 @@
                                             <segue destination="Zh8-oq-M0b" kind="modal" id="f8R-Qs-C2D"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="WV2-oC-QVP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xux-Ag-oXQ" style="IBUITableViewCellStyleDefault" id="WV2-oC-QVP">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WV2-oC-QVP" id="egZ-80-Vo8">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="灵敏度" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xux-Ag-oXQ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Gbc-vD-BDi">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="CwA-X5-95l" style="IBUITableViewCellStyleDefault" id="Gbc-vD-BDi">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gbc-vD-BDi" id="fdy-me-ewv">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="关于我们" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CwA-X5-95l">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="wPK-Oy-5qm">
@@ -329,14 +345,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wPK-Oy-5qm" id="1lF-3j-cTo">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qI-RV-NIP">
-                                                    <rect key="frame" x="17" y="-3" width="279" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2id-yL-q96">
+                                                    <rect key="frame" x="15" y="5" width="285" height="31"/>
                                                     <state key="normal" title="用户反馈">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="userSayBackAction:" destination="vRJ-sQ-Wkh" eventType="touchUpInside" id="Dz5-W4-fTa"/>
+                                                        <action selector="userSayBackAction:" destination="vRJ-sQ-Wkh" eventType="touchUpInside" id="cw4-my-VNo"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

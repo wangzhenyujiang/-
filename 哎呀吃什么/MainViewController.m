@@ -10,6 +10,7 @@
 #import "InfoCollectionViewCell.h"
 #import "AddCollectionViewCell.h"
 #import "ShowFoodViewController.h"
+#import "DXAlertView.h"
 //#import "EAIntroView.h"
 
 @interface MainViewController ()
@@ -202,9 +203,22 @@
             
             if(foodPosition!=[_foodInfoList count])
             {
-                UIAlertView *alterView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"您确定要删除这个美食么" delegate:self cancelButtonTitle:@"饶它一命" otherButtonTitles:@"拖下斩了", nil];
+//                UIAlertView *alterView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"您确定要删除这个美食么" delegate:self cancelButtonTitle:@"饶它一命" otherButtonTitles:@"拖下斩了", nil];
+//                
+//                [alterView show];
                 
-                [alterView show];
+                DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Congratulations" contentText:@"您确定要删除这个美食么" leftButtonTitle:@"饶它一命" rightButtonTitle:@"拖下斩了"];
+                [alert show];
+                alert.leftBlock = ^() {
+                    NSLog(@"left button clicked");
+                };
+                alert.rightBlock = ^() {
+                    NSLog(@"right button clicked");
+                     [self deleteFood:foodPosition];
+                };
+                alert.dismissBlock = ^() {
+                    NSLog(@"Do something interesting after dismiss block");
+                };
                 
             }else
             {
@@ -217,18 +231,18 @@
 }
 
 
-#pragma marks -- UIAlertViewDelegate --
-//根据被点击按钮的索引处理点击事件
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if(buttonIndex == alertView.firstOtherButtonIndex)
-    {
-        [self deleteFood:foodPosition];
-        NSLog(@"斩了");
-        
-    }
-    
-}
+//#pragma marks -- UIAlertViewDelegate --
+////根据被点击按钮的索引处理点击事件
+//-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    if(buttonIndex == alertView.firstOtherButtonIndex)
+//    {
+//       
+//        NSLog(@"斩了");
+//        
+//    }
+//    
+//}
 /*
  删除美食的方法
  */

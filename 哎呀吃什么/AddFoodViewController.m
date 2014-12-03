@@ -7,6 +7,7 @@
 //
 
 #import "AddFoodViewController.h"
+#import "DXAlertView.h"
 
 @interface AddFoodViewController ()
 {
@@ -63,9 +64,18 @@
     
     if ([self.foodName length]==0) {
         
-        UIAlertView *alterView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"美食名不能为空" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles:nil, nil];
-        
-        [alterView show];
+//        UIAlertView *alterView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"美食名不能为空" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles:nil, nil];
+//        
+//        [alterView show];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名不能为空奥 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        [alert show];
+        alert.rightBlock = ^() {
+            NSLog(@"right button clicked");
+        };
+        alert.dismissBlock = ^() {
+            NSLog(@"Do something interesting after dismiss block");
+        };
+
         
     }else
     {
