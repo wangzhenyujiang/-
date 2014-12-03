@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShowFoodViewController : UIViewController
+@interface ShowFoodViewController : UIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *showFoodNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *showFoodImageView;
+
+@property(strong,nonatomic)NSData *showData;
+@property(strong,nonatomic)NSMutableArray *showFoodInfoList;
+@property(nonatomic)int foodIndex;
+- (IBAction)changeFoodImageViewAction:(id)sender;
 
 @end

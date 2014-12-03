@@ -13,6 +13,8 @@
 @end
 
 @implementation ShakeViewController
+@synthesize shakeFoodImageView=_shakeFoodImageView;
+@synthesize shakeFoodNameLabel=_shakeFoodNameLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

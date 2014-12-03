@@ -50,6 +50,7 @@
                                         <connections>
                                             <outlet property="infoFoodImageView" destination="8H3-MM-Cy4" id="HkO-YX-PeB"/>
                                             <outlet property="infoFoodNameLabel" destination="QZ2-wO-UPb" id="ath-Q4-H2e"/>
+                                            <segue destination="GrE-Wq-iWQ" kind="push" identifier="showDetail" id="vtN-Cc-vqZ"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addFoodCell" id="sk1-it-uhP" customClass="AddCollectionViewCell">
@@ -99,6 +100,65 @@
             </objects>
             <point key="canvasLocation" x="825" y="-299"/>
         </scene>
+        <!-- 美味-->
+        <scene sceneID="jpl-Yn-0iq">
+            <objects>
+                <viewController id="GrE-Wq-iWQ" customClass="ShowFoodViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qva-zE-IcT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Doo-Ei-lBR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="feE-fW-Rwt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIv-t8-1Xg">
+                                <rect key="frame" x="40" y="107" width="240" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfp-IK-Sso">
+                                <rect key="frame" x="40" y="200" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Twl-Jh-UUU"/>
+                                    <constraint firstAttribute="height" constant="240" id="zQW-1g-Ap6"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeFoodImageViewAction:" destination="GrE-Wq-iWQ" eventType="touchUpInside" id="hyC-qS-eGM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="KjB-pg-z4c">
+                                <rect key="frame" x="40" y="200" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="HhW-OG-Sf6"/>
+                                    <constraint firstAttribute="width" constant="240" id="qPV-dT-Y8Z"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KjB-pg-z4c" firstAttribute="width" secondItem="yfp-IK-Sso" secondAttribute="width" id="Bvm-Jv-DZN"/>
+                            <constraint firstAttribute="centerY" secondItem="yfp-IK-Sso" secondAttribute="centerY" id="Dj3-eh-jyy"/>
+                            <constraint firstAttribute="centerX" secondItem="WIv-t8-1Xg" secondAttribute="centerX" id="Lu2-as-HxV"/>
+                            <constraint firstItem="KjB-pg-z4c" firstAttribute="width" secondItem="WIv-t8-1Xg" secondAttribute="width" id="NKr-Uj-qed"/>
+                            <constraint firstAttribute="centerY" secondItem="KjB-pg-z4c" secondAttribute="centerY" id="buX-xG-zIm"/>
+                            <constraint firstAttribute="centerX" secondItem="KjB-pg-z4c" secondAttribute="centerX" id="cB3-bv-0hZ"/>
+                            <constraint firstAttribute="centerX" secondItem="yfp-IK-Sso" secondAttribute="centerX" id="ngJ-y5-3NN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title=" 美味" id="bTc-Ih-S2h" colorLabel="IBBuiltInLabel-Red"/>
+                    <connections>
+                        <outlet property="showFoodImageView" destination="KjB-pg-z4c" id="RKU-2Y-gJS"/>
+                        <outlet property="showFoodNameLabel" destination="WIv-t8-1Xg" id="VFk-7d-mRB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJq-La-Okc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1234" y="-961"/>
+        </scene>
         <!--菜肴-->
         <scene sceneID="vrM-at-oHb">
             <objects>
@@ -113,6 +173,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="1bX-2o-1mp">
                                 <rect key="frame" x="40" y="200" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="fC2-UX-sOg"/>
+                                    <constraint firstAttribute="height" constant="240" id="rsJ-sH-y3C"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXh-hb-qLq">
                                 <rect key="frame" x="40" y="200" width="240" height="240"/>
@@ -160,7 +224,7 @@
             </objects>
             <point key="canvasLocation" x="1672" y="-299"/>
         </scene>
-        <!--Shake View Controller-->
+        <!--摇一摇-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="ShakeViewController" sceneMemberID="viewController">
@@ -171,13 +235,34 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-NB-U7N">
+                                <rect key="frame" x="40" y="96" width="240" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shake.png" translatesAutoresizingMaskIntoConstraints="NO" id="aDQ-iq-8Bo">
+                                <rect key="frame" x="40" y="150" width="237" height="235"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3LF-NB-U7N" firstAttribute="width" secondItem="aDQ-iq-8Bo" secondAttribute="width" id="PJM-B0-b1M"/>
+                            <constraint firstItem="3LF-NB-U7N" firstAttribute="centerX" secondItem="aDQ-iq-8Bo" secondAttribute="centerX" id="dBb-gt-HrL"/>
+                            <constraint firstAttribute="centerY" secondItem="aDQ-iq-8Bo" secondAttribute="centerY" id="eVN-T8-yrv"/>
+                            <constraint firstAttribute="centerX" secondItem="aDQ-iq-8Bo" secondAttribute="centerX" id="ech-sD-tvM"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" title="摇一摇" id="ATA-rY-Nab"/>
+                    <connections>
+                        <outlet property="shakeFoodImageView" destination="aDQ-iq-8Bo" id="Lhc-IS-YPO"/>
+                        <outlet property="shakeFoodNameLabel" destination="3LF-NB-U7N" id="eeO-kQ-d79"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="352.15999999999997"/>
+            <point key="canvasLocation" x="828" y="352"/>
         </scene>
         <!--用户-->
         <scene sceneID="bKK-ex-vKU">
@@ -246,7 +331,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qI-RV-NIP">
-                                                    <rect key="frame" x="14" y="-3" width="279" height="50"/>
+                                                    <rect key="frame" x="17" y="-3" width="279" height="50"/>
                                                     <state key="normal" title="用户反馈">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -298,7 +383,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="6rR-2e-bdi" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="qeq-c1-hAv" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="KKU-eI-CJ9" kind="relationship" relationship="viewControllers" id="HIp-qa-eWr"/>
                     </connections>
                 </tabBarController>
@@ -514,10 +599,30 @@
             </objects>
             <point key="canvasLocation" x="400" y="1072"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QKg-cl-Wlq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qeq-c1-hAv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TGh-Wa-oo9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="gqH-hP-pht"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vwc-WJ-5cL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="352"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add.png" width="130" height="110"/>
         <image name="pic_default.png" width="250" height="250"/>
+        <image name="shake.png" width="217" height="217"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MainViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MainViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property(strong,nonatomic)NSMutableArray * foodInfoList;
+@property(nonatomic)int selectFoodIndex;
 
 @end

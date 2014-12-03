@@ -9,10 +9,19 @@
 #import "ShowFoodViewController.h"
 
 @interface ShowFoodViewController ()
+{
+    UIActionSheet *MyActionsheet;
+}
 
 @end
 
 @implementation ShowFoodViewController
+
+@synthesize showFoodImageView=_showFoodImageView;
+@synthesize showFoodNameLabel=_showFoodNameLabel;
+@synthesize showData=_showData;
+@synthesize showFoodInfoList=_showFoodInfoList;
+@synthesize foodIndex=_foodIndex;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +33,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if([[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]])          //如果该文件存在
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:[self dataFilePath]];
+        
+        _showFoodInfoList=array;
+        
+    }else
+    {
+        _showFoodInfoList=[[NSMutableArray alloc]init];
+    }
+
+    
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+}
+
 /*
 #pragma mark - Navigation
 
@@ -33,5 +63,119 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)changeFoodImageViewAction:(id)sender {
+    
+    MyActionsheet=[[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相机",@"打开相册", nil];
+    
+    [MyActionsheet showInView:self.view];
+
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if(buttonIndex == MyActionsheet.cancelButtonIndex)
+    {
+        NSLog(@"取消");
+    }
+    
+    switch (buttonIndex) {
+        case 0:
+            //调用相机
+            [self takePhoto];
+            break;
+        case 1:
+            //调用相册
+            [self localPhoto];
+            break;
+    }
+}
+
+/*
+ 打开照相机的方法
+ */
+
+-(void)takePhoto
+{
+    UIImagePickerControllerSourceType souceType=UIImagePickerControllerSourceTypeCamera;
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *picker= [[UIImagePickerController alloc]init ];
+        picker.delegate=self;
+        //设置拍照后的图片可编辑
+        picker.allowsEditing=YES;
+        picker.sourceType=souceType;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }
+}
+
+/*
+ 打开本地相册的方法
+ */
+
+-(void)localPhoto
+{
+    UIImagePickerController *picker=[[UIImagePickerController alloc]init];
+    
+    picker.delegate=self;
+    picker.allowsEditing=YES;
+    picker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+
+/*
+ 图片选择完后调用didFinishPickingMediaWithInfo方法
+ */
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    NSString *type=[info objectForKey:UIImagePickerControllerMediaType];
+    
+    
+    if([type isEqualToString:@"public.image"])
+    {
+        //先把图片转化成NSData
+        UIImage *image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        
+        _showData=UIImageJPEGRepresentation(image, 0.5);
+        
+        _showFoodImageView.layer.cornerRadius=30.0f;
+        _showFoodImageView.clipsToBounds=YES;
+        
+        _showFoodImageView.image=image;
+        
+    }
+}
+
+/*
+ 这是在相册界面或者相机界面选择取消时调用的方法。
+ */
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    NSLog(@"您选择了取消选择图片");
+    [picker dismissViewControllerAnimated:YES  completion:nil];
+}
+
+/*
+ 用来返回food.plist数据文件的完整路径名
+ */
+
+-(NSString *)dataFilePath
+{
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *paths = [path objectAtIndex:0];
+    
+    return [paths stringByAppendingPathComponent:@"food.plist"];
+    
+}
+
 
 @end
