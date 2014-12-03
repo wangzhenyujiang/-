@@ -15,6 +15,7 @@
 @property(strong,nonatomic)NSData *showData;
 @property(strong,nonatomic)NSMutableArray *showFoodInfoList;
 @property(nonatomic)int foodIndex;
+@property(nonatomic,copy)NSString *showFoodName;
 - (IBAction)changeFoodImageViewAction:(id)sender;
 
 @end

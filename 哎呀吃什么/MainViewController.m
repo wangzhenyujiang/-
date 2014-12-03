@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "InfoCollectionViewCell.h"
 #import "AddCollectionViewCell.h"
+#import "ShowFoodViewController.h"
 //#import "EAIntroView.h"
 
 @interface MainViewController ()
@@ -30,16 +31,6 @@
     //[self showIntroWithCrossDissolve];
     foodPosition=-1;
     
-    if([[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]])          //如果该文件存在
-    {
-        NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:[self dataFilePath]];
-        
-        _foodInfoList=array;
-        
-    }else
-    {
-        _foodInfoList=[[NSMutableArray alloc]init];
-    }
     
     
     // _foodInfoList=[[NSMutableArray alloc]init];
@@ -65,6 +56,19 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    if([[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]])          //如果该文件存在
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:[self dataFilePath]];
+        
+        _foodInfoList=array;
+        
+    }else
+    {
+        _foodInfoList=[[NSMutableArray alloc]init];
+    }
+
+    
     [self.collectionView reloadData];
 }
 
@@ -76,6 +80,15 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqual:@"showDetail"]) {
+        ShowFoodViewController *showController=segue.destinationViewController;
+        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+        _selectFoodIndex=indexPath.row;
+        
+        showController.foodIndex=_selectFoodIndex;
+        
+        
+        showController.showFoodInfoList=_foodInfoList;
         
     }
     

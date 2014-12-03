@@ -22,10 +22,21 @@
 @synthesize showData=_showData;
 @synthesize showFoodInfoList=_showFoodInfoList;
 @synthesize foodIndex=_foodIndex;
+@synthesize showFoodName=_showFoodName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *name=[[_showFoodInfoList objectAtIndex:_foodIndex] objectForKey:@"foodName"];
+    NSData *data=[[_showFoodInfoList objectAtIndex:_foodIndex] objectForKey:@"imageData"];
+    _showData=data;
+    _showFoodName=name;
+    
+    self.showFoodImageView.layer.cornerRadius=30.0f;
+    self.showFoodImageView.clipsToBounds=YES;
+    
+    self.showFoodImageView.image=[[UIImage alloc] initWithData:data];
+    self.showFoodNameLabel.text=name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,22 +47,30 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if([[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]])          //如果该文件存在
-    {
-        NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:[self dataFilePath]];
-        
-        _showFoodInfoList=array;
-        
-    }else
-    {
-        _showFoodInfoList=[[NSMutableArray alloc]init];
-    }
+//    if([[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]])          //如果该文件存在
+//    {
+//        NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:[self dataFilePath]];
+//        
+//        _showFoodInfoList=array;
+//        
+//    }else
+//    {
+//        _showFoodInfoList=[[NSMutableArray alloc]init];
+//    }
 
     
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    NSString *name=_showFoodNameLabel.text;
+    if([name length]==0)
+    {
+        name=_showFoodName;
+    }
     
+    NSDictionary *dictonary=[[NSDictionary alloc] initWithObjectsAndKeys:_showData, @"imageData",name,@"foodName", nil];
+    [_showFoodInfoList replaceObjectAtIndex:_foodIndex withObject:dictonary];
+    [_showFoodInfoList writeToFile:[self dataFilePath] atomically:YES];
 }
 
 /*
