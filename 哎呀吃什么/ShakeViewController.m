@@ -106,6 +106,15 @@
             
             self.shakeFoodImageView.image = [[UIImage alloc]initWithData:data];
             
+            DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"摇一摇" contentText:@"这顿就吃它啦>_<" leftButtonTitle:nil rightButtonTitle:@"必须的"];
+            
+            [alert show];
+            
+            alert.dismissBlock = ^() {
+                NSLog(@"Do something interesting after dismiss block");
+            };
+
+            
             firstShake=NO;
             _timer = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(TimerCallBack) userInfo:nil repeats:NO];
         }

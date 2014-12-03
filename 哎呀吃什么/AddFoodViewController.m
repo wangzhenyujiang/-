@@ -12,6 +12,7 @@
 @interface AddFoodViewController ()
 {
     UIActionSheet *MyActionsheet;
+    BOOL showDXAlterView;
 }
 
 @end
@@ -29,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _addFoodNameLabel.delegate=self;
+    showDXAlterView=YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -187,10 +189,27 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    
     if (range.location>=8)
     {
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名字八个字以内哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
-        [alert show];
+        if (showDXAlterView) {
+            DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名字八个字以内哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+            [alert show];
+            
+           
+            alert.rightBlock = ^() {
+                NSLog(@"right button clicked");
+                showDXAlterView=YES;
+            };
+            alert.dismissBlock = ^() {
+                NSLog(@"Do something interesting after dismiss block");
+                showDXAlterView=YES;
+            };
+            
+            showDXAlterView=NO;
+            [_addFoodNameLabel resignFirstResponder];
+        }
+  
         return  NO;
     }
     else
