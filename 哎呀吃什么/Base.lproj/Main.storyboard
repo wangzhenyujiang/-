@@ -160,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="1234" y="-961"/>
         </scene>
-        <!--菜肴-->
+        <!--添加菜肴-->
         <scene sceneID="vrM-at-oHb">
             <objects>
                 <viewController id="JlH-ol-2Qv" customClass="AddFoodViewController" sceneMemberID="viewController">
@@ -207,13 +207,13 @@
                             <action selector="hiddenKeyBoard:" destination="JlH-ol-2Qv" eventType="touchUpInside" id="nqG-Ry-ZSy"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="菜肴" id="CFx-ta-7PR">
-                        <barButtonItem key="leftBarButtonItem" image="back.png" id="nKX-9Z-LAh">
+                    <navigationItem key="navigationItem" title="添加菜肴" id="CFx-ta-7PR">
+                        <barButtonItem key="leftBarButtonItem" title="取消" style="plain" id="nKX-9Z-LAh">
                             <connections>
                                 <action selector="cancelButtonAction:" destination="JlH-ol-2Qv" id="g5d-Lc-d5y"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="save.png" id="0Gd-jA-ofC">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="0Gd-jA-ofC">
                             <connections>
                                 <action selector="saveButtonAction:" destination="JlH-ol-2Qv" id="fyU-dK-Igc"/>
                             </connections>
@@ -752,11 +752,9 @@
         <image name="2.png" width="128" height="128"/>
         <image name="5" width="128" height="128"/>
         <image name="add.png" width="130" height="110"/>
-        <image name="back.png" width="44" height="28"/>
         <image name="button.png" width="244" height="63"/>
         <image name="pic_default.png" width="250" height="250"/>
         <image name="psw.png" width="72" height="72"/>
-        <image name="save.png" width="55" height="55"/>
         <image name="shake.png" width="240" height="360"/>
         <image name="us.png" width="120" height="120"/>
         <image name="user.png" width="72" height="72"/>

@@ -30,6 +30,7 @@
 		F08DCD6E1A2C213A007DAED8 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */; };
 		F08DCD711A2C2B84007DAED8 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = F08DCD701A2C2B84007DAED8 /* add.png */; };
 		F08DCD731A2C2B97007DAED8 /* pic_default.png in Resources */ = {isa = PBXBuildFile; fileRef = F08DCD721A2C2B97007DAED8 /* pic_default.png */; };
+		F0BBC7E61A2F530C0098CEC0 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BBC7E51A2F530C0098CEC0 /* back.png */; };
 		F0EAAB261A2F04EE00CF5D66 /* shake.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB251A2F04EE00CF5D66 /* shake.png */; };
 		F0EAAB331A2F052C00CF5D66 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB271A2F052C00CF5D66 /* 1.png */; };
 		F0EAAB341A2F052C00CF5D66 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB281A2F052C00CF5D66 /* 2.png */; };
@@ -44,7 +45,6 @@
 		F0EAAB3E1A2F052C00CF5D66 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB321A2F052C00CF5D66 /* 12.png */; };
 		F0EAAB401A2F29A900CF5D66 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB3F1A2F29A900CF5D66 /* button.png */; };
 		F0EAAB421A2F2B9600CF5D66 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB411A2F2B9600CF5D66 /* save.png */; };
-		F0EAAB441A2F2BD500CF5D66 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB431A2F2BD500CF5D66 /* back.png */; };
 		F0EAAB4A1A2F2FFC00CF5D66 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB491A2F2FFC00CF5D66 /* 13.png */; };
 		F0EAAB4C1A2F311200CF5D66 /* us.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB4B1A2F311200CF5D66 /* us.png */; };
 		F0EAAB4E1A2F35E500CF5D66 /* psw.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EAAB4D1A2F35E500CF5D66 /* psw.png */; };
@@ -102,6 +102,7 @@
 		F08DCD6D1A2C213A007DAED8 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		F08DCD701A2C2B84007DAED8 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		F08DCD721A2C2B97007DAED8 /* pic_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic_default.png; sourceTree = "<group>"; };
+		F0BBC7E51A2F530C0098CEC0 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		F0EAAB251A2F04EE00CF5D66 /* shake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shake.png; sourceTree = "<group>"; };
 		F0EAAB271A2F052C00CF5D66 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		F0EAAB281A2F052C00CF5D66 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		F0EAAB321A2F052C00CF5D66 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		F0EAAB3F1A2F29A900CF5D66 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		F0EAAB411A2F2B9600CF5D66 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
-		F0EAAB431A2F2BD500CF5D66 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		F0EAAB491A2F2FFC00CF5D66 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
 		F0EAAB4B1A2F311200CF5D66 /* us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = us.png; sourceTree = "<group>"; };
 		F0EAAB4D1A2F35E500CF5D66 /* psw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psw.png; sourceTree = "<group>"; };
@@ -285,13 +285,13 @@
 				F0EAAB3F1A2F29A900CF5D66 /* button.png */,
 				F0EAAB291A2F052C00CF5D66 /* 3.png */,
 				F0EAAB2A1A2F052C00CF5D66 /* 4.png */,
-				F0EAAB431A2F2BD500CF5D66 /* back.png */,
 				F0EAAB2C1A2F052C00CF5D66 /* 6.png */,
 				F0EAAB4D1A2F35E500CF5D66 /* psw.png */,
 				F0EAAB411A2F2B9600CF5D66 /* save.png */,
 				F0EAAB2D1A2F052C00CF5D66 /* 7.png */,
 				F0EAAB2E1A2F052C00CF5D66 /* 8.png */,
 				F0EAAB4F1A2F35EA00CF5D66 /* user.png */,
+				F0BBC7E51A2F530C0098CEC0 /* back.png */,
 				F0EAAB2F1A2F052C00CF5D66 /* 9.png */,
 				F0EAAB4B1A2F311200CF5D66 /* us.png */,
 				F0EAAB491A2F2FFC00CF5D66 /* 13.png */,
@@ -402,13 +402,13 @@
 				F0EAAB401A2F29A900CF5D66 /* button.png in Resources */,
 				F0EAAB3D1A2F052C00CF5D66 /* 11.png in Resources */,
 				F0EAAB391A2F052C00CF5D66 /* 7.png in Resources */,
+				F0BBC7E61A2F530C0098CEC0 /* back.png in Resources */,
 				F0EAAB501A2F35EA00CF5D66 /* user.png in Resources */,
 				F06ED19F1A2D85B5004D2ED1 /* UMFeedbackLocalizable.strings in Resources */,
 				F071C5601A2EEC17005B9338 /* btn_close_selected@2x.png in Resources */,
 				F0EAAB3B1A2F052C00CF5D66 /* 9.png in Resources */,
 				F071C55F1A2EEC17005B9338 /* btn_close_selected.png in Resources */,
 				F0EAAB331A2F052C00CF5D66 /* 1.png in Resources */,
-				F0EAAB441A2F2BD500CF5D66 /* back.png in Resources */,
 				F0EAAB3E1A2F052C00CF5D66 /* 12.png in Resources */,
 				F08DCD361A2C1D56007DAED8 /* Images.xcassets in Resources */,
 				F08DCD711A2C2B84007DAED8 /* add.png in Resources */,
