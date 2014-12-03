@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *shakeFoodNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *shakeFoodImageView;
 
+@property(strong,nonatomic)NSMutableArray *shakeFoodInfoList;
 @end

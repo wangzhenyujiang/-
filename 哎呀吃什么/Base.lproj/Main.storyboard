@@ -108,7 +108,7 @@
                         <viewControllerLayoutGuide type="top" id="qva-zE-IcT"/>
                         <viewControllerLayoutGuide type="bottom" id="Doo-Ei-lBR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="feE-fW-Rwt">
+                    <view key="view" contentMode="scaleToFill" id="feE-fW-Rwt" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -147,6 +147,9 @@
                             <constraint firstAttribute="centerX" secondItem="KjB-pg-z4c" secondAttribute="centerX" id="YdF-2t-Shd"/>
                             <constraint firstAttribute="centerX" secondItem="WIv-t8-1Xg" secondAttribute="centerX" id="vTA-DR-Nka"/>
                         </constraints>
+                        <connections>
+                            <action selector="hiddenKeyBoard:" destination="GrE-Wq-iWQ" eventType="touchUpInside" id="VKQ-mq-nUZ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title=" 美味" id="bTc-Ih-S2h" colorLabel="IBBuiltInLabel-Red"/>
                     <connections>
@@ -166,7 +169,7 @@
                         <viewControllerLayoutGuide type="top" id="I99-O4-okX"/>
                         <viewControllerLayoutGuide type="bottom" id="GoL-JW-FZu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jha-gr-DtL">
+                    <view key="view" contentMode="scaleToFill" id="jha-gr-DtL" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -201,6 +204,9 @@
                             <constraint firstItem="CXh-hb-qLq" firstAttribute="width" secondItem="1bX-2o-1mp" secondAttribute="width" id="HPB-tC-x9L"/>
                             <constraint firstItem="CXh-hb-qLq" firstAttribute="width" secondItem="OaX-T2-8g6" secondAttribute="width" id="WTS-pY-CpY"/>
                         </constraints>
+                        <connections>
+                            <action selector="hiddenKeyBoard:" destination="JlH-ol-2Qv" eventType="touchUpInside" id="nqG-Ry-ZSy"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="菜肴" id="CFx-ta-7PR">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="nKX-9Z-LAh">
@@ -235,7 +241,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-NB-U7N">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-NB-U7N">
                                 <rect key="frame" x="38" y="83" width="240" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -243,6 +249,10 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shake.png" translatesAutoresizingMaskIntoConstraints="NO" id="aDQ-iq-8Bo">
                                 <rect key="frame" x="40" y="127" width="237" height="235"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="235" id="dRU-C8-uOn"/>
+                                    <constraint firstAttribute="width" constant="237" id="eJg-NG-36w"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

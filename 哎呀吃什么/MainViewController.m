@@ -207,7 +207,7 @@
 //                
 //                [alterView show];
                 
-                DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Congratulations" contentText:@"您确定要删除这个美食么" leftButtonTitle:@"饶它一命" rightButtonTitle:@"拖下斩了"];
+                DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"您确定要删除这个美食么" leftButtonTitle:@"饶它一命" rightButtonTitle:@"拖下斩了"];
                 [alert show];
                 alert.leftBlock = ^() {
                     NSLog(@"left button clicked");

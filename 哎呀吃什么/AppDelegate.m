@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [UMFeedback setAppkey:@"5477f330fd98c51387000114"];
+     application.applicationSupportsShakeToEdit = YES;
    // [self showIntroWithCrossDissolve];
     return YES;
 }

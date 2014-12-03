@@ -22,5 +22,6 @@
 
 - (IBAction)saveButtonAction:(id)sender;
 
+- (IBAction)hiddenKeyBoard:(id)sender;
 
 @end

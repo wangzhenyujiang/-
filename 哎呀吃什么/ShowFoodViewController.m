@@ -91,6 +91,10 @@
 
 }
 
+- (IBAction)hiddenKeyBoard:(id)sender {
+    [_showFoodNameLabel resignFirstResponder];
+}
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     

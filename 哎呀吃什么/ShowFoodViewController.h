@@ -18,4 +18,6 @@
 @property(nonatomic,copy)NSString *showFoodName;
 - (IBAction)changeFoodImageViewAction:(id)sender;
 
+- (IBAction)hiddenKeyBoard:(id)sender;
+
 @end
