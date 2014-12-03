@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "DXAlertView.h"
 
 @interface LoginViewController ()
 
@@ -71,8 +72,11 @@
     }else
     {
         
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-                                                      message:@"用户名或者密码不能为空" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
+//                                                      message:@"用户名或者密码不能为空" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        [alert show];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"用户名或者密码不能为空哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        
         [alert show];
         
     }
@@ -111,15 +115,22 @@
     
     if ([s_result rangeOfString:@"OK"].length>0)
     {
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-                                                      message:@"登录成功" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
+//                                                      message:@"ç" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        [alert show];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆成功" leftButtonTitle:nil rightButtonTitle:@"朕很开心"];
+        
         [alert show];
+
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else
     {
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:@"登录失败" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:@"登录失败" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        [alert show];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆失败" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        
         [alert show];
         NSLog(@"login faile");
     }
@@ -129,7 +140,8 @@
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:@"请检查网络连接" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles: nil];
+    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"网络错误" leftButtonTitle:nil rightButtonTitle:@"朕马上解决"];
+    
     [alert show];
     NSLog(@"数据接受失败，失败原因：%@",[error localizedDescription]);
 }

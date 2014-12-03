@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "DXAlertView.h"
 
 @interface RegisterViewController ()
 
@@ -44,7 +45,6 @@
 */
 
 - (IBAction)rigisterButtonAction:(id)sender {
-  //  http://cqcreer.jd-app.com/register.php?username=wwww&password=wwww
     self.userName = self.userNameField.text;
     self.userPas=self.userPasfield.text;
     self.rePas=self.rePasField.text;
@@ -79,16 +79,20 @@
         }else
         {
         //两次密码不一致
-            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-                                                          message:@"两次密码不一致" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles: nil];
+            DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"两次密码不一致哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+            
             [alert show];
+
         }
     
     }else
     {
         //用户信息不全
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-                                                      message:@"用户信息不全" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles: nil];
+//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
+//                                                      message:@"用户信息不全" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles: nil];
+//        [alert show];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"您给点信息吧 >_<" leftButtonTitle:nil rightButtonTitle:@"马上写"];
+        
         [alert show];
     }
     
@@ -123,15 +127,20 @@
     
     if ([s_result rangeOfString:@"OK"].length>0)
     {
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-                                                      message:@"注册成功" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
+//                                                      message:@"注册成功" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        [alert show];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"注册成功" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        
         [alert show];
+
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else
     {
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:@"注册失败" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"注册失败" leftButtonTitle:nil rightButtonTitle:@"再注册一次"];
+        
         [alert show];
         NSLog(@"login faile");
     }
@@ -141,7 +150,8 @@
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示" message:[error localizedDescription] delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles: nil];
+    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"网络错误" leftButtonTitle:nil rightButtonTitle:@"朕马上解决"];
+    
     [alert show];
     NSLog(@"数据接受失败，失败原因：%@",[error localizedDescription]);
 }
