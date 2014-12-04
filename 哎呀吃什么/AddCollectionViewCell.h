@@ -13,7 +13,4 @@
 @property (weak, nonatomic) IBOutlet UIImageView *addFoodNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addFoodImageView;
 
-//@property (weak, nonatomic) IBOutlet UILabel *addFoodNameLabel;
-//@property (weak, nonatomic) IBOutlet UIImageView *addFoodImageView;
-
 @end
