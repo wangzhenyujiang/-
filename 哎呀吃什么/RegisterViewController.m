@@ -8,8 +8,13 @@
 
 #import "RegisterViewController.h"
 #import "DXAlertView.h"
+#import "JGProgressHUD.h"
 
 @interface RegisterViewController ()
+{
+
+    JGProgressHUD *indicator;
+}
 
 @end
 
@@ -30,6 +35,9 @@
     _userNameField.delegate=self;
     _userPasfield.delegate=self;
     _rePasField.delegate=self;
+    
+    indicator = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+    indicator.textLabel.text=@"注册中请稍等...";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +61,9 @@
 */
 
 - (IBAction)rigisterButtonAction:(id)sender {
+    
+    [indicator showInView:self.view];
+    
     self.userName = self.userNameField.text;
     self.userPas=self.userPasfield.text;
     self.rePas=self.rePasField.text;
@@ -61,7 +72,7 @@
     {
         if ([self.userPas compare:self.rePas] == NSOrderedSame)
         {
-            //http://1.ingeatwhat.sinaapp.com/register.php?username=21&password=21&password2=21&submit=Register
+           
             NSString * s_url = [[NSString alloc]initWithFormat:@"http://1.ingeatwhat.sinaapp.com/register.php?username=%@&password=%@&password2=%@",self.userName,self.userPas,self.userPas];
             NSURL *url = [[NSURL alloc]initWithString:s_url];
             //创建请求对象
@@ -152,6 +163,8 @@
     if ([s_result rangeOfString:@"OK"].length>0)
     {
 
+        [indicator dismiss];
+        
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"注册成功" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
         
        
@@ -172,6 +185,7 @@
     }
     else
     {
+        [indicator dismiss];
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"注册失败" leftButtonTitle:nil rightButtonTitle:@"再注册一次"];
         
         [alert show];
@@ -183,6 +197,7 @@
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    [indicator dismiss];
     DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"网络错误" leftButtonTitle:nil rightButtonTitle:@"朕马上解决"];
     
     [alert show];

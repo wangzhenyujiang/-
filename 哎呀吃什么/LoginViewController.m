@@ -8,8 +8,13 @@
 
 #import "LoginViewController.h"
 #import "DXAlertView.h"
+#import "JGProgressHUD.h"
 
 @interface LoginViewController ()
+{
+
+    JGProgressHUD *indicator;
+}
 
 @end
 
@@ -26,6 +31,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _userNameField.delegate=self;
+    indicator = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+    indicator.textLabel.text=@"登录中请稍等...";
+    
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,15 +57,15 @@
     
     if([_userNameField.text length]!=0 && [_userPasField.text length]!=0)
     {
+        [indicator showInView:self.view];   //添加活动指示器
+        
         NSString * s_url = [[NSString alloc]initWithFormat:@"http://1.ingeatwhat.sinaapp.com/login.php?username=%@&password=%@",_userNameField.text,_userPasField.text];
         NSURL *url = [[NSURL alloc]initWithString:s_url];
         //创建请求对象
        
         NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
         
-        
-      //  [[NSURLConnection alloc]initWithRequest:request delegate:self];
-        
+                
         NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
         
         if (connection) {
@@ -73,9 +82,6 @@
     }else
     {
         
-//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-//                                                      message:@"用户名或者密码不能为空" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//        [alert show];
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"用户名或者密码不能为空哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
         
         [alert show];
@@ -121,6 +127,8 @@
     if ([s_result rangeOfString:@"OK"].length>0)
     {
 
+        [indicator dismiss];
+        
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆成功" leftButtonTitle:nil rightButtonTitle:@"朕很开心"];
         
         [alert show];
@@ -130,6 +138,8 @@
     }
     else
     {
+        [indicator dismiss];
+        
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆失败" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
         
         [alert show];
@@ -141,6 +151,7 @@
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    [indicator dismiss];
     DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"网络错误" leftButtonTitle:nil rightButtonTitle:@"朕马上解决"];
     
     [alert show];
