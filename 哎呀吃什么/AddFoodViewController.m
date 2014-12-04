@@ -12,7 +12,7 @@
 @interface AddFoodViewController ()
 {
     UIActionSheet *MyActionsheet;
-    BOOL showDXAlterView;
+    BOOL showDXAlterView;//为了防止DXAlertView对话框多次显示而设置的bool值
 }
 
 @end
@@ -21,9 +21,9 @@
 
 @synthesize addFoodNameLabel=_addFoodNameLabel;
 @synthesize addFoodImageView=_addFoodImageView;
-@synthesize oneFoodInfoDictionary=_oneFoodInfoDictionary;
-@synthesize foodName=_foodName;
-@synthesize data=_data;
+@synthesize oneFoodInfoDictionary=_oneFoodInfoDictionary;//用来临时存储要填加的这个美食的所有信息
+@synthesize foodName=_foodName;//要添加的美食的名字
+@synthesize data=_data;//要添加的美食的图片
 
 
 - (void)viewDidLoad {
@@ -38,15 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)addFoodButtonAction:(id)sender {
     
@@ -67,15 +58,10 @@
     NSString *temp = [self.addFoodNameLabel.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];//判断用户输入是否全是空格的临时字符串
     
     if ([self.foodName length]==0 || [temp length]==0) {
-        
-//        UIAlertView *alterView=[[UIAlertView alloc]initWithTitle:@"提示" message:@"美食名不能为空" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles:nil, nil];
-//        
-//        [alterView show];
+
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名不能为空奥 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
         [alert show];
-        
-
-        
+       
     }else
     {
         if (self.data==nil) {        //如果他没有添加照片，那么就初始化一个m默认图片的data。

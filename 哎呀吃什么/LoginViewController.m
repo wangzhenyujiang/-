@@ -13,7 +13,7 @@
 @interface LoginViewController ()
 {
 
-    JGProgressHUD *indicator;
+    JGProgressHUD *indicator;          //用户等待指示器
 }
 
 @end
@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _userNameField.delegate=self;
-    indicator = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+    indicator = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];     //初始化指示器
     indicator.textLabel.text=@"登录中请稍等...";
    
 }
@@ -41,16 +41,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+ 登录按钮执行的方法。
+ */
 - (IBAction)loginButtonAction:(id)sender {
      NSLog(@"button执行");
     
@@ -60,24 +54,19 @@
         
         NSString * s_url = [[NSString alloc]initWithFormat:@"http://1.ingeatwhat.sinaapp.com/login.php?username=%@&password=%@",_userNameField.text,_userPasField.text];
         NSURL *url = [[NSURL alloc]initWithString:s_url];
-        //创建请求对象
-       
-        NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
-        
-                
-        NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
+      
+        NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];           //创建请求对象
+        NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];          //开始请求登录
         
         if (connection) {
-             _m_data = [[NSMutableData alloc]init];
+            
+             _m_data = [[NSMutableData alloc]init];//如果连接成功，初始化一个data用来存放返回的数据
             NSLog(@"connection创建成功过");
+            
         }else
         {
-        
             NSLog(@"connection创建失败");
         }
-        
-        NSLog(@"执行");
-
     }else
     {
         
@@ -90,10 +79,16 @@
    
 }
 
+/*返回configTableViewController界面*/
+
 - (IBAction)loginBackBarButtonAction:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+/*
+ 把view改成control后，调用touch方法隐藏键盘
+ */
 
 - (IBAction)hiddenKeyBoard:(id)sender {
     
@@ -104,11 +99,18 @@
 
 
 #pragma NSURLConnectionDelegate
+
+/*
+  NSURLConnectionDelegate方法，数据接收过程中调用这个方法。
+ */
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     [self.m_data appendData:data];
     NSLog(@"didReceiveData");
 }
+/*
+ NSURLConnectionDelegate方法，当数据接收完毕后调用这个方法
+ */
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSLog(@"connectionDidFinishLoading");
@@ -148,7 +150,9 @@
     }
 
 }
-
+/*
+ NSURLConnectionDelegate的方法，当出现网络错误的时候就会调用次方法
+ */
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
@@ -158,7 +162,9 @@
     [alert show];
     NSLog(@"数据接受失败，失败原因：%@",[error localizedDescription]);
 }
-
+/*
+ 判断用户输入的字数是否合法，textFieldDelegate的方法
+ */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if (range.location>=10)

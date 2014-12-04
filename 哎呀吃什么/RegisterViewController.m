@@ -13,7 +13,7 @@
 @interface RegisterViewController ()
 {
 
-    JGProgressHUD *indicator;
+    JGProgressHUD *indicator; //等待指示器
 }
 
 @end
@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _userNameField.delegate=self;
+    _userNameField.delegate=self;          //设置代理，为了检测用户输入字数时候合法
     _userPasfield.delegate=self;
     _rePasField.delegate=self;
     
@@ -69,19 +69,15 @@
     
     if([self.userName length]!=0&&[self.userPas length]!=0&&[self.rePas length]!=0)
     {
-        if ([self.userPas compare:self.rePas] == NSOrderedSame)
+        if ([self.userPas compare:self.rePas] == NSOrderedSame)//判断两次密码时候一致
         {
            
             [indicator showInView:self.view];
             
             NSString * s_url = [[NSString alloc]initWithFormat:@"http://1.ingeatwhat.sinaapp.com/register.php?username=%@&password=%@&password2=%@",self.userName,self.userPas,self.userPas];
             NSURL *url = [[NSURL alloc]initWithString:s_url];
-            //创建请求对象
             
             NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
-            
-            
-            //  [[NSURLConnection alloc]initWithRequest:request delegate:self];
             
             NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
             
@@ -93,9 +89,6 @@
                 
                 NSLog(@"connection创建失败");
             }
-            
-            NSLog(@"执行");
-            
 
         }else
         {
@@ -115,6 +108,10 @@
     }
     
 }
+
+/*
+ 隐藏键盘的方法
+ */
 
 - (IBAction)reallyHiddenKey:(id)sender {
     
@@ -137,6 +134,9 @@
     
 }
 #pragma NSURLConnectionDelegate
+/*
+ 实现NSURLConnectiondelegate方法。
+ */
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     [self.data appendData:data];
@@ -148,17 +148,8 @@
     
     NSString *s_result = [[NSString alloc]initWithData:_data encoding:NSUTF8StringEncoding];
     //处理接收到的数据
-    //如果包含“ok”，则登录成功，反之则失败
     
-    if([s_result length]==0)
-    {
-        NSLog(@"没有数据");
-    }else
-    {
-        NSLog(s_result);
-    }
-    
-    if ([s_result rangeOfString:@"OK"].length>0)
+    if ([s_result rangeOfString:@"OK"].length>0)  //如果包含“ok”，则登录成功，反之则失败
     {
 
         [indicator dismiss];
@@ -174,16 +165,13 @@
             NSLog(@"Do something interesting after dismiss block");
             [self dismissViewControllerAnimated:YES completion:nil];
         };
-
         
         [alert show];
-
         
-       // [self dismissViewControllerAnimated:YES completion:nil];
     }
     else
     {
-        [indicator dismiss];
+        [indicator dismiss];          //活动指示器消失
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"注册失败" leftButtonTitle:nil rightButtonTitle:@"再注册一次"];
         
         [alert show];
@@ -202,6 +190,9 @@
     NSLog(@"数据接受失败，失败原因：%@",[error localizedDescription]);
 }
 
+/*
+ 检测用户输入的字数是否合法，这是UITextFieldDelegate的方法
+ */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if (range.location>=10)
