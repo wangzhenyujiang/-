@@ -9,8 +9,15 @@
 
 #import "configTableViewController.h"
 #import "UMFeedback.h"
+#import "JGProgressHUD.h"
+#import "JGProgressHUDPieIndicatorView.h"
+#import "JGProgressHUDRingIndicatorView.h"
+#import "JGProgressHUDFadeZoomAnimation.h"
 
 @interface configTableViewController ()
+{
+    JGProgressHUD *HUD;
+}
 
 @end
 
@@ -30,6 +37,17 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getUserName:) name:@"getUserName" object:nil];
     
 
+    HUD = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleLight];
+    HUD.userInteractionEnabled = YES;
+    HUD.delegate = self;
+    
+    UIImageView *errorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jg_hud_success.png"]];
+    HUD.textLabel.text = @"登录成功!";
+    JGProgressHUDIndicatorView *ind = [[JGProgressHUDIndicatorView alloc] initWithContentView:errorImageView];
+    HUD.progressIndicatorView = ind;
+    
+    HUD.square = YES;
+    
     
 }
 
@@ -56,5 +74,9 @@
     NSString *userName=[theData objectForKey:@"userName"];
     
     _configUserNameLabel.text=userName;
+    
+    [HUD showInView:self.navigationController.view];
+    
+    [HUD dismissAfterDelay:1.0];
 }
 @end

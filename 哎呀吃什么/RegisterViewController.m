@@ -62,7 +62,6 @@
 
 - (IBAction)rigisterButtonAction:(id)sender {
     
-    [indicator showInView:self.view];
     
     self.userName = self.userNameField.text;
     self.userPas=self.userPasfield.text;
@@ -73,6 +72,8 @@
         if ([self.userPas compare:self.rePas] == NSOrderedSame)
         {
            
+            [indicator showInView:self.view];
+            
             NSString * s_url = [[NSString alloc]initWithFormat:@"http://1.ingeatwhat.sinaapp.com/register.php?username=%@&password=%@&password2=%@",self.userName,self.userPas,self.userPas];
             NSURL *url = [[NSURL alloc]initWithString:s_url];
             //创建请求对象
@@ -107,10 +108,7 @@
     
     }else
     {
-        //用户信息不全
-//        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"提示"
-//                                                      message:@"用户信息不全" delegate:self cancelButtonTitle:@"朕知道了" otherButtonTitles: nil];
-//        [alert show];
+    
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"您给点信息吧 >_<" leftButtonTitle:nil rightButtonTitle:@"马上写"];
         
         [alert show];

@@ -33,7 +33,6 @@
     _userNameField.delegate=self;
     indicator = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
     indicator.textLabel.text=@"登录中请稍等...";
-    
    
 }
 
