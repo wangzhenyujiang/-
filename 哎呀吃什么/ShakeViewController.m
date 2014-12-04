@@ -8,11 +8,17 @@
 
 #import "ShakeViewController.h"
 #import "DXAlertView.h"
+#import "JGProgressHUD.h"
+#import "JGProgressHUDPieIndicatorView.h"
+#import "JGProgressHUDRingIndicatorView.h"
+#import "JGProgressHUDFadeZoomAnimation.h"
+
 
 @interface ShakeViewController ()
 {
 
     BOOL firstShake;
+    JGProgressHUD *HUD;
 }
 
 @end
@@ -28,6 +34,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"viewDidLoad");
+    
+    HUD = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleLight];
+    HUD.useProgressIndicatorView = NO;
+    HUD.userInteractionEnabled = YES;
+    HUD.delegate = self;
+    HUD.position = JGProgressHUDPositionBottomCenter;
+    HUD.marginInsets = (UIEdgeInsets) {
+        .top = 0.0f,
+        .bottom = 55.0f,
+        .left = 0.0f,
+        .right = 0.0f,
+    };
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,7 +92,7 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (!firstShake) {
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"摇一摇" contentText:@"别摇了这顿就吃它吧 >_<" leftButtonTitle:@"一分钟后再战" rightButtonTitle:@"这顿就吃它了"];
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"摇一摇" contentText:@"别摇了这顿就吃它吧 >_<" leftButtonTitle:nil rightButtonTitle:@"这顿就吃它了"];
         
         [alert show];
         
@@ -106,14 +126,13 @@
             
             self.shakeFoodImageView.image = [[UIImage alloc]initWithData:data];
             
-            DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"摇一摇" contentText:@"这顿就吃它啦>_<" leftButtonTitle:nil rightButtonTitle:@"必须的"];
+            NSString *str=@"这顿为您推荐";
+            NSString *strTemp=[str stringByAppendingString:_shakeFoodNameLabel.text];
             
-            [alert show];
-            
-            alert.dismissBlock = ^() {
-                NSLog(@"Do something interesting after dismiss block");
-            };
-
+            HUD.textLabel.text =strTemp;
+            [HUD showInView:self.navigationController.view];
+            [HUD dismissAfterDelay:3.0f];
+           
             
             firstShake=NO;
             _timer = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(TimerCallBack) userInfo:nil repeats:NO];

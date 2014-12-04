@@ -16,7 +16,7 @@
 
 @interface configTableViewController ()
 {
-    JGProgressHUD *HUD;
+    JGProgressHUD *indicator;
 }
 
 @end
@@ -37,16 +37,14 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getUserName:) name:@"getUserName" object:nil];
     
 
-    HUD = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleLight];
-    HUD.userInteractionEnabled = YES;
-    HUD.delegate = self;
-    
+    indicator = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleLight];
+    indicator.userInteractionEnabled = YES;
+    indicator.delegate = self;
     UIImageView *errorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jg_hud_success.png"]];
-    HUD.textLabel.text = @"登录成功!";
+    indicator.textLabel.text = @"登录成功!";
     JGProgressHUDIndicatorView *ind = [[JGProgressHUDIndicatorView alloc] initWithContentView:errorImageView];
-    HUD.progressIndicatorView = ind;
-    
-    HUD.square = YES;
+    indicator.progressIndicatorView = ind;
+    indicator.square = YES;
     
     
 }
@@ -75,8 +73,7 @@
     
     _configUserNameLabel.text=userName;
     
-    [HUD showInView:self.navigationController.view];
-    
-    [HUD dismissAfterDelay:1.0];
+    [indicator showInView:self.navigationController.view];
+    [indicator dismissAfterDelay:1.0];
 }
 @end
