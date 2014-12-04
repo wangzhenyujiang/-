@@ -126,7 +126,7 @@
             
             self.shakeFoodImageView.image = [[UIImage alloc]initWithData:data];
             
-            NSString *str=@"这顿为您推荐";
+            NSString *str=@"为您推荐大餐";
             NSString *strTemp=[str stringByAppendingString:_shakeFoodNameLabel.text];
             
             HUD.textLabel.text =strTemp;

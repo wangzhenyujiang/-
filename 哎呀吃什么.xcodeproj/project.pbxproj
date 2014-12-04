@@ -26,6 +26,7 @@
 		F07BF5C51A3001FF009F2C62 /* JGProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F07BF5BD1A3001FF009F2C62 /* JGProgressHUDRingIndicatorView.m */; };
 		F07BF5C81A30031C009F2C62 /* jg_hud_success.png in Resources */ = {isa = PBXBuildFile; fileRef = F07BF5C61A30031C009F2C62 /* jg_hud_success.png */; };
 		F07BF5C91A30031C009F2C62 /* jg_hud_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F07BF5C71A30031C009F2C62 /* jg_hud_success@2x.png */; };
+		F07BF5CC1A3016E4009F2C62 /* userFigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07BF5CB1A3016E4009F2C62 /* userFigTableViewController.m */; };
 		F08DCD281A2C1D56007DAED8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD271A2C1D56007DAED8 /* main.m */; };
 		F08DCD2B1A2C1D56007DAED8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F08DCD2A1A2C1D56007DAED8 /* AppDelegate.m */; };
 		F08DCD341A2C1D56007DAED8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08DCD321A2C1D56007DAED8 /* Main.storyboard */; };
@@ -104,6 +105,8 @@
 		F07BF5BD1A3001FF009F2C62 /* JGProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
 		F07BF5C61A30031C009F2C62 /* jg_hud_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jg_hud_success.png; sourceTree = "<group>"; };
 		F07BF5C71A30031C009F2C62 /* jg_hud_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jg_hud_success@2x.png"; sourceTree = "<group>"; };
+		F07BF5CA1A3016E4009F2C62 /* userFigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userFigTableViewController.h; sourceTree = "<group>"; };
+		F07BF5CB1A3016E4009F2C62 /* userFigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userFigTableViewController.m; sourceTree = "<group>"; };
 		F08DCD221A2C1D56007DAED8 /* 哎呀吃什么.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "哎呀吃什么.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08DCD261A2C1D56007DAED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F08DCD271A2C1D56007DAED8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				F08DCD611A2C20A9007DAED8 /* AddFoodViewController.m */,
 				F08DCD661A2C20F2007DAED8 /* ShowFoodViewController.h */,
 				F08DCD671A2C20F2007DAED8 /* ShowFoodViewController.m */,
+				F07BF5CA1A3016E4009F2C62 /* userFigTableViewController.h */,
+				F07BF5CB1A3016E4009F2C62 /* userFigTableViewController.m */,
 			);
 			name = PushController;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				F08DCD5B1A2C1F70007DAED8 /* InfoCollectionViewCell.m in Sources */,
 				F07BF5BF1A3001FF009F2C62 /* JGProgressHUDAnimation.m in Sources */,
 				F07BF5C31A3001FF009F2C62 /* JGProgressHUDIndicatorView.m in Sources */,
+				F07BF5CC1A3016E4009F2C62 /* userFigTableViewController.m in Sources */,
 				F07BF5BE1A3001FF009F2C62 /* JGProgressHUD.m in Sources */,
 				F08DCD2B1A2C1D56007DAED8 /* AppDelegate.m in Sources */,
 				F071C5611A2EEC17005B9338 /* DXAlertView.m in Sources */,

@@ -12,6 +12,7 @@
 @interface ShowFoodViewController ()
 {
     UIActionSheet *MyActionsheet;
+    BOOL showDXAlertView;
 }
 
 @end
@@ -40,6 +41,8 @@
     
     self.showFoodImageView.image=[[UIImage alloc] initWithData:data];
     self.showFoodNameLabel.text=name;
+    
+    showDXAlertView=YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -207,8 +210,26 @@
 {
     if (range.location>=8)
     {
+        [_showFoodNameLabel resignFirstResponder];
+       
+        if (showDXAlertView) {
+        
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"美食名字八个字以内哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+        
+        alert.rightBlock = ^() {
+            NSLog(@"right button clicked");
+            showDXAlertView=YES;
+        };
+        alert.dismissBlock = ^() {
+            NSLog(@"Do something interesting after dismiss block");
+            showDXAlertView=YES;
+        };
+        
+        showDXAlertView=NO;
+        
         [alert show];
+        
+    }
         return  NO;
     }
     else
