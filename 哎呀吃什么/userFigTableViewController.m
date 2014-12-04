@@ -13,15 +13,14 @@
 @end
 
 @implementation userFigTableViewController
+@synthesize selfLoginSwitch=_selfLoginSwitch;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    [_selfLoginSwitch setOn:[userDefaults boolForKey:@"selfLoginBool"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,4 +28,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)selfLoginSwitchAction:(id)sender {
+     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+     BOOL setting;
+   if([_selfLoginSwitch isOn])
+   {
+       setting =YES;
+   }else
+   {
+       setting=NO;
+   }
+    [userDefaults setBool:setting forKey:@"selfLoginBool"];
+}
+
+- (IBAction)clearAllInfoButtonAction:(id)sender {
+    
+}
+
+- (IBAction)cancelUserButtonAction:(id)sender {
+    
+}
 @end

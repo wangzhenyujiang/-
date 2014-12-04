@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface userFigTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UISwitch *selfLoginSwitch;
+- (IBAction)selfLoginSwitchAction:(id)sender;
+- (IBAction)clearAllInfoButtonAction:(id)sender;
+- (IBAction)cancelUserButtonAction:(id)sender;
 
 @end

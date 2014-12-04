@@ -612,6 +612,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wqz-kx-tYz">
                                                     <rect key="frame" x="248" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="selfLoginSwitchAction:" destination="ipL-SA-cV6" eventType="valueChanged" id="gfz-2i-ucU"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自动登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPb-KM-fxn">
                                                     <rect key="frame" x="8" y="11" width="232" height="25"/>
@@ -636,6 +639,9 @@
                                                     <state key="normal" title="清除缓存">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="clearAllInfoButtonAction:" destination="ipL-SA-cV6" eventType="touchUpInside" id="gdl-qY-M4d"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -655,6 +661,9 @@
                                                         <color key="titleColor" red="1" green="0.24711351127559367" blue="0.20594335700549959" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="cancelUserButtonAction:" destination="ipL-SA-cV6" eventType="touchUpInside" id="sI2-Eu-dm6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -668,6 +677,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xAi-7C-76c"/>
+                    <connections>
+                        <outlet property="selfLoginSwitch" destination="Wqz-kx-tYz" id="dG4-Df-Mbu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfD-GU-IFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
