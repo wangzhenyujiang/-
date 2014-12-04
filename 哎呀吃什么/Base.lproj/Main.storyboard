@@ -415,6 +415,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="用户" id="WXT-ac-xwc"/>
+                    <connections>
+                        <outlet property="configUserNameLabel" destination="H58-nh-GXJ" id="HbG-YB-iF5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rg2-q1-5NN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

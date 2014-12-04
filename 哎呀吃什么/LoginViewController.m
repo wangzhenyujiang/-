@@ -127,12 +127,26 @@
     if ([s_result rangeOfString:@"OK"].length>0)
     {
 
+        
+        NSDictionary *userInfoDictionary=[[NSDictionary alloc]initWithObjectsAndKeys:_userNameField.text,@"userName", nil];
+        
+//        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆成功" leftButtonTitle:nil rightButtonTitle:@"朕很开心"];
+//       
+//        alert.rightBlock = ^() {
+//            NSLog(@"right button clicked");
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserName" object:nil userInfo:userInfoDictionary];
+//        };
+//        alert.dismissBlock = ^() {
+//            NSLog(@"Do something interesting after dismiss block");
+//
+//        };
+
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserName" object:nil userInfo:userInfoDictionary];
         [indicator dismiss];
         
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"登陆成功" leftButtonTitle:nil rightButtonTitle:@"朕很开心"];
-        
-        [alert show];
-
+        [self dismissViewControllerAnimated:YES completion:nil];
+//        [alert show];
+//
         
        // [self dismissViewControllerAnimated:YES completion:nil];
     }

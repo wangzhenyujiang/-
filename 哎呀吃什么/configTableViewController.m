@@ -16,6 +16,9 @@
 
 @implementation configTableViewController
 
+@synthesize configUserNameLabel=_configUserNameLabel;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -24,6 +27,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getUserName:) name:@"getUserName" object:nil];
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,5 +47,14 @@
 //                                          animated:YES];
     [self presentModalViewController:[UMFeedback feedbackModalViewController]
                             animated:YES];
+}
+
+-(void)getUserName:(NSNotification *)notification
+{
+    NSDictionary *theData=[notification userInfo];
+
+    NSString *userName=[theData objectForKey:@"userName"];
+    
+    _configUserNameLabel.text=userName;
 }
 @end

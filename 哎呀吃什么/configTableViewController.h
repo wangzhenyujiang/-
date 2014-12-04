@@ -12,5 +12,6 @@
 
 - (IBAction)userSayBackAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *configUserNameLabel;
 
 @end
