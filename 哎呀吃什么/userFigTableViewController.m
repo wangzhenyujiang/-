@@ -60,12 +60,13 @@
 
 - (IBAction)clearAllInfoButtonAction:(id)sender {
     
-    if([[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]])          //如果该文件存在
+    if([[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]])  //如果该文件存在
     {
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"警告" contentText:@"您所有的美食信息都将被清除\n请谨慎操作" leftButtonTitle:@"取消" rightButtonTitle:@"清除"];
         alert.rightBlock = ^() {
-            
+            //删除沙盒中得food.plist文件
             [[NSFileManager defaultManager] removeItemAtPath:[self dataFilePath] error:nil];
+            //显示成功标志
             [indicator showInView:self.navigationController.view];
             [indicator dismissAfterDelay:1.0];
         };
@@ -83,7 +84,6 @@
 - (IBAction)cancelUserButtonAction:(id)sender {
     
 }
-
 
 /*
  用来返回food.plist数据文件的完整路径名

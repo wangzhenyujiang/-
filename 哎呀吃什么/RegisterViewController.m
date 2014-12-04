@@ -14,6 +14,8 @@
 {
 
     JGProgressHUD *indicator; //等待指示器
+    BOOL showDXAlterView;
+
 }
 
 @end
@@ -38,6 +40,8 @@
     
     indicator = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
     indicator.textLabel.text=@"注册中请稍等...";
+    
+    showDXAlterView=YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -197,8 +201,27 @@
 {
     if (range.location>=10)
     {
+        [_userNameField resignFirstResponder];
+        [_userPasfield resignFirstResponder];
+        [_rePasField resignFirstResponder];
+        
+        if(showDXAlterView)
+        {
+        
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"名字密码太长不好记哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+            
+           
+            alert.rightBlock = ^() {
+                NSLog(@"right button clicked");
+                showDXAlterView=YES;
+            };
+            alert.dismissBlock = ^() {
+                NSLog(@"Do something interesting after dismiss block");
+                showDXAlterView=YES;
+            };
         [alert show];
+        showDXAlterView=NO;
+        }
         return  NO;
     }
     else

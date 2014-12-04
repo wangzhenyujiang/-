@@ -58,9 +58,7 @@
 
 
 - (IBAction)userSayBackAction:(id)sender {
-    
-//    [self.navigationController pushViewController:[UMFeedback feedbackViewController]
-//                                          animated:YES];
+
     [self presentModalViewController:[UMFeedback feedbackModalViewController]
                             animated:YES];
 }

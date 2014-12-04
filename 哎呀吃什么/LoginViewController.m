@@ -14,6 +14,7 @@
 {
 
     JGProgressHUD *indicator;          //用户等待指示器
+    BOOL showDXAlterView;
 }
 
 @end
@@ -31,9 +32,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _userNameField.delegate=self;
+    _userPasField.delegate=self;
     indicator = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];     //初始化指示器
     indicator.textLabel.text=@"登录中请稍等...";
    
+    showDXAlterView=YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,8 +172,26 @@
 {
     if (range.location>=10)
     {
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"没有这么长的昵称哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
-        [alert show];
+        [_userNameField resignFirstResponder];
+        
+        if(showDXAlterView)
+        {
+        
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"没有这么长的昵称密码哦 >_<" leftButtonTitle:nil rightButtonTitle:@"朕知道了"];
+            
+           
+            alert.rightBlock = ^() {
+                NSLog(@"right button clicked");
+                showDXAlterView=YES;
+            };
+            alert.dismissBlock = ^() {
+                NSLog(@"Do something interesting after dismiss block");
+                showDXAlterView=YES;
+            };
+            
+           [alert show];
+            showDXAlterView=NO;
+        }
         return  NO;
     }
     else
